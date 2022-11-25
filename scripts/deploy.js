@@ -6,9 +6,7 @@
 // global scope, and execute the script.
 const hre = require("hardhat");
 
-async function main() {
-
-}
+async function main() {}
 
 // We recommend this pattern to be able to use async/await everywhere
 // and properly handle errors.
