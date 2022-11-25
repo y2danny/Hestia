@@ -1,15 +1,39 @@
-// We require the Hardhat Runtime Environment explicitly here. This is optional
-// but useful for running the script in a standalone fashion through `node <script>`.
-//
-// You can also run a script with `npx hardhat run <script>`. If you do that, Hardhat
-// will compile your contracts, add the Hardhat Runtime Environment's members to the
-// global scope, and execute the script.
-const hre = require("hardhat");
+const { ethers, network } = require("hardhat");
+// const hre = require("hardhat");
+const { verify } = require("../utils/verify");
+const { developmentChains } = require("../helper-config");
 
-async function main() {}
+async function main() {
+  [seller] = await ethers.getSigners();
+  // const aa = await ethers.getSigners();
+  const agent = "0x602A8B4843790134C92Ad3f0705a2589ed2Cdd20";
+  // console.log(aa);
 
-// We recommend this pattern to be able to use async/await everywhere
-// and properly handle errors.
+  // Deploy Contract
+  const realEstate = await ethers.getContractFactory("RealEstate");
+  const realestate = await realEstate.deploy();
+  realestate.deployed();
+  console.log(
+    `The Hestia Real Estate NFT contact address is ${realestate.address}`
+  );
+  const args = [realestate.address, seller.address, agent];
+  const Escrow = await ethers.getContractFactory("Escrow");
+  const escrow = await Escrow.deploy(realestate.address, seller.address, agent);
+  escrow.deployed();
+  console.log(
+    `The Hestia Real Estate Escrow contact address is ${escrow.address}`
+  );
+  // console.log(developmentChains);
+  // if (
+  //   !developmentChains.includes(network.name) &&
+  //   process.env.POLYGONSCAN_API_KEY
+  // ) {
+  //   await verify(realestate.address, args);
+  //   await verify(escrow.address, args);
+  // }
+  // log("-----------------------------");
+}
+
 main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
