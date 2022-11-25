@@ -10,7 +10,7 @@ module.exports = {
   networks: {
     polygon: {
       url: process.env.API_URL,
-      accounts: [process.env.PRIVATE_KEY],
+      accounts: [process.env.PRIVATE_KEY, process.env.PRIVATE_KEY_TWO],
     },
   },
   etherscan: {

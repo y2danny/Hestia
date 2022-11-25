@@ -4,9 +4,10 @@ const { verify } = require("../utils/verify");
 const { developmentChains } = require("../helper-config");
 
 async function main() {
-  [seller] = await ethers.getSigners();
+  [seller, agent] = await ethers.getSigners();
+  // console.log(seller);
   // const aa = await ethers.getSigners();
-  const agent = "0x602A8B4843790134C92Ad3f0705a2589ed2Cdd20";
+  // const agent = "0x602A8B4843790134C92Ad3f0705a2589ed2Cdd20";
   // console.log(aa);
 
   // Deploy Contract
@@ -16,9 +17,13 @@ async function main() {
   console.log(
     `The Hestia Real Estate NFT contact address is ${realestate.address}`
   );
-  const args = [realestate.address, seller.address, agent];
+  const args = [realestate.address, seller.address, agent.address];
   const Escrow = await ethers.getContractFactory("Escrow");
-  const escrow = await Escrow.deploy(realestate.address, seller.address, agent);
+  const escrow = await Escrow.deploy(
+    realestate.address,
+    seller.address,
+    agent.address
+  );
   escrow.deployed();
   console.log(
     `The Hestia Real Estate Escrow contact address is ${escrow.address}`
