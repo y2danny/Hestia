@@ -1,11 +1,3 @@
-# Hestia web3 application
-
-- Hestia Tech Stack
-
-
-- The use of the Hestia 
-
-
 - Description
 
 
@@ -44,3 +36,4 @@
 npx tailwindcss init -p
 
 npm install postcss@latest -->
+
