@@ -1,7 +1,7 @@
 const { ethers, network } = require("hardhat");
 // const hre = require("hardhat");
-const { verify } = require("../utils/verify");
-const { developmentChains } = require("../helper-config");
+// const { verify } = require("../utils/verify");
+// const { developmentChains } = require("../helper-config");
 
 async function main() {
   [seller, agent] = await ethers.getSigners();
@@ -28,18 +28,40 @@ async function main() {
   console.log(
     `The Hestia Real Estate Escrow contact address is ${escrow.address}`
   );
-  // console.log(developmentChains);
-  // if (
-  //   !developmentChains.includes(network.name) &&
-  //   process.env.POLYGONSCAN_API_KEY
-  // ) {
-  //   await verify(realestate.address, args);
-  //   await verify(escrow.address, args);
-  // }
-  // log("-----------------------------");
+  saveFrontendFiles(escrow, "Escrow");
+  saveFrontendFiles(realestate, "RealEstate");
 }
+function saveFrontendFiles(contract, name) {
+  const fs = require("fs");
+  const contractsDir = process.cwd() + "/src/abis/contractsData";
 
+  if (!fs.existsSync(contractsDir)) {
+    fs.mkdirSync(contractsDir);
+  }
+
+  fs.writeFileSync(
+    contractsDir + `/${name}-address.json`,
+    JSON.stringify({ address: contract.address }, undefined, 2)
+  );
+
+  const contractArtifact = artifacts.readArtifactSync(name);
+
+  fs.writeFileSync(
+    contractsDir + `/${name}.json`,
+    JSON.stringify(contractArtifact, null, 2)
+  );
+}
 main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });
+
+// console.log(developmentChains);
+// if (
+//   !developmentChains.includes(network.name) &&
+//   process.env.POLYGONSCAN_API_KEY
+// ) {
+//   await verify(realestate.address, args);
+//   await verify(escrow.address, args);
+// }
+// log("-----------------------------");
