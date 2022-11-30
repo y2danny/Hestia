@@ -7,6 +7,10 @@
 // import Ellipse8 from "assets/Ellipse8";
 // import Ellipse9 from "assets/Ellipse9";
 // import logo from '../assets/logo.svg';
+import {
+  Link,
+} from "react-router-dom";
+
 
 const Properties = () => {
     return (
@@ -15,7 +19,7 @@ const Properties = () => {
         <p
           className="absolute text-2xl m-0 left-[89px] top-[1107px] leading-[normal]"
         >
-          Available properties
+         Available properties
         </p>
       </div>
       <div>
@@ -73,13 +77,13 @@ const Properties = () => {
       </div>
 
       {/* <Ellipse2 /> */}
-
+      <Link to="/property"> 
       <div className={`text-black text-left font-medium font-['Inter']`}>
         <p
           className="absolute text-sm m-0 left-[94px] top-[1500px] leading-[normal]"
         >
-          Duplex - 2 terrace
-        </p>
+         Duplex - 2 terrace
+      </p>
       </div>
       <div className={`text-black text-left font-medium font-['Inter']`}>
         <p
@@ -130,6 +134,7 @@ const Properties = () => {
           className="[background:url(https://uortjlczjmucmpaqqhqm.supabase.co/storage/v1/object/public/firejet-converted-images/images/ddfb7f75693433adc91180d588a6b00d734fd533.webp)_center_/_cover,linear-gradient(0deg,_rgba(217,_217,_217,_1),_rgba(217,_217,_217,_1))] absolute w-[239px] h-[280px] left-[366px] top-[1199px] rounded-[19px]"
          />
       </div>
+      </Link>
       {/* <Ellipse3 /> */}
       <div className={`text-black text-left font-medium font-['Inter']`}>
         <p

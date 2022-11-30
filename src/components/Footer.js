@@ -9,7 +9,7 @@ const Footer = () => {
         <div>
         <div>
         <div
-          className="[box-shadow:0px_0px_0px_1px_rgba(76,_206,_48,_1)_inset] [box-shadow-width:1px] absolute w-[1351.1163330078125px] h-[333.0223083496094px] left-[-31.55px] top-[3817.11px] bg-[rgba(21,80,9,1)] rounded-[20px]"
+          className="[box-shadow:0px_0px_0px_1px_rgba(76,_206,_48,_1)_inset] [box-shadow-width:1px] absolute w-full h-[333.0223083496094px] top-[3817.11px] bg-[rgba(21,80,9,1)] rounded-[20px]"
          />
       </div>
 

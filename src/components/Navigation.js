@@ -4,7 +4,6 @@ import {
 } from "react-router-dom";
 
 
-
 const Navigation = () => {
   return (
       <div>
@@ -24,7 +23,7 @@ const Navigation = () => {
             <p
               className="absolute text-xl m-0 left-[357px] top-[65px] leading-[normal]"
             >
-              Home
+              <Link exact to="/" className="">Home</Link>
             </p>
           </div>
           <div
@@ -52,7 +51,7 @@ const Navigation = () => {
               className="absolute text-xl m-0 left-[735px] top-[65px] leading-[normal]"
 
             >
-              <Link to="community">Community</Link>
+              <Link to="/community" className="">Community</Link>
             </p>
           </div>
           <div>

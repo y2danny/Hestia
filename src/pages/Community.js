@@ -5,80 +5,17 @@
 // import Ellipse10 from "assets/Ellipse10";
 // import Ellipse11 from "assets/Ellipse11";
 // import RiCopyrightLine1 from "assets/RiCopyrightLine1";
+import Navigation from '../components/Navigation';
 
 
 function Community() {
 
     return (
-        <div>
-          <div
+    <div>
+    <div
       className={`relative bg-white text-left w-[1280px] h-[3158px] overflow-clip font-['Red_Rose']`}
     >
-      <div>
-        <div
-          className="[box-shadow:0px_0px_0px_1px_rgba(76,_206,_48,_1)_inset] [box-shadow-width:1px] absolute w-[91px] h-[25px] left-[335px] top-[322px] bg-[rgba(69,255,29,0.05)] rounded-[10px]"
-         />
-      </div>
-      <div>
-        <div
-          className="[box-shadow:0px_0px_0px_1px_rgba(76,_206,_48,_1)_inset] [box-shadow-width:1px] absolute w-[91px] h-[25px] left-[228px] top-[322px] bg-[rgba(69,255,29,0.05)] rounded-[10px]"
-         />
-      </div>
-      <div>
-        <div
-          className="[box-shadow:0px_0px_0px_1px_rgba(76,_206,_48,_1)_inset] [box-shadow-width:1px] absolute w-[91px] h-[25px] left-[621px] top-[697px] bg-[rgba(69,255,29,0.05)] rounded-[10px]"
-         />
-      </div>
-      <div>
-        <div
-          className="[box-shadow:0px_0px_0px_1px_rgba(76,_206,_48,_1)_inset] [box-shadow-width:1px] absolute w-[265px] h-[84px] left-[686px] top-[1348px] bg-[rgba(69,255,29,0.05)] rounded-[20px]"
-         />
-      </div>
-      <div>
-        <div
-          className="[background:url(https://uortjlczjmucmpaqqhqm.supabase.co/storage/v1/object/public/firejet-converted-images/images/fd6e0b75128c35e7388456f74af7be292e7a2c7f.webp)_center_/_cover] w-28 absolute h-[83px] left-[100px] top-[29px]"
-         />
-      </div>
-      <div className="font-normal text-[rgba(113,10,135,1)]">
-        <p
-          className="absolute text-xl m-0 left-[340px] top-[65px] leading-[normal]"
-        >
-          Home
-        </p>
-      </div>
-      <div className="font-normal text-[rgba(113,10,135,1)]">
-        <p
-          className="absolute text-xl m-0 left-[445px] top-[65px] leading-[normal]"
-        >
-          Place to stay
-        </p>
-      </div>
-      <div className="font-normal text-[rgba(113,10,135,1)]">
-        <p
-          className="absolute text-xl m-0 left-[618px] top-[65px] leading-[normal]"
-        >
-          Blog
-        </p>
-      </div>
-      <div className="font-normal text-[rgba(113,10,135,1)]">
-        <p
-          className="absolute text-xl m-0 left-[718px] top-[65px] leading-[normal]"
-        >
-          Community
-        </p>
-      </div>
-      <div>
-        <div
-          className="absolute w-[206px] h-[61px] left-[973px] top-[41px] bg-[rgba(179,49,207,1)] rounded-[20px]"
-         />
-      </div>
-      <div className="text-white font-normal">
-        <p
-          className="absolute text-xl m-0 left-[1009px] top-[58px] leading-[normal]"
-        >
-          Connect wallet
-        </p>
-      </div>
+      <Navigation />
       <div>
         <div
           className="[box-shadow:0px_0px_0px_1px_rgba(76,_206,_48,_1)_inset] [box-shadow-width:1px] absolute w-[1156px] h-[487px] left-[70px] top-[293px] bg-[rgba(69,255,29,0.05)] rounded-[20px]"
@@ -362,13 +299,13 @@ function Community() {
           Investing with Hestia has changed my life. Imagine having your properties secured as NFT, with such a blissful experience
         </p>
       </div>
-      <div className="font-normal text-[rgba(21,80,9,1)]">
+      {/* <div className="font-normal text-[rgba(21,80,9,1)]">
         <p
           className="absolute text-lg leading-4 m-0 h-[23.59px] w-[121.67px] left-[16.2%] right-[74.3%] top-[96.72%] bottom-[2.53%]"
         >
           2022 Hestia
         </p>
-      </div>
+      </div> */}
       {/* <RiCopyrightLine1 /> */}
       <div className="font-normal text-[rgba(76,206,48,1)]">
         <p

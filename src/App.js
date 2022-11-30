@@ -1,13 +1,10 @@
 // import { useEffect, useState } from 'react';
 // import { ethers } from 'ethers';
 
-// Components
-import Navigation from './components/Navigation';
-import Jumbroton from './components/Jumbroton';
-import Properties from './components/Properties';
-import Blog from './components/Blog';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import Home from "./pages/Home";
+import Community from "./pages/Community";
+import Property from "./pages/Property";
+import NotFoundPage from "./pages/NotFoundPage";
 
 // import Search from './components/Search';
 // import Home from './components/Home';
@@ -18,17 +15,21 @@ import Footer from './components/Footer';
 
 // Config
 // import config from './config.json';
+import {
+  Route, Routes
+} from "react-router-dom";
+
 
 function App() {
 
   return (
-    <div className="relative bg-white w-[1280px] h-[4142px] overflow-clip">
-      <Navigation />
-      <Jumbroton />
-      <Properties />
-      <Blog />
-      <Contact />
-      <Footer />
+    <div>
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/community" element={<Community />}></Route>
+        <Route path="/property" element={<Property />}></Route>
+        <Route path="*" component={<NotFoundPage />} />
+      </Routes>
     </div>
   );
 }
