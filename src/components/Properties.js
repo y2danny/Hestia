@@ -1,3 +1,11 @@
+// import Ellipse2 from "assets/Ellipse2";
+// import Ellipse3 from "assets/Ellipse3";
+// import Ellipse4 from "assets/Ellipse4";
+// import Ellipse5 from "assets/Ellipse5";
+// import Ellipse6 from "assets/Ellipse6";
+// import Ellipse7 from "assets/Ellipse7";
+// import Ellipse8 from "assets/Ellipse8";
+// import Ellipse9 from "assets/Ellipse9";
 // import logo from '../assets/logo.svg';
 
 const Properties = () => {
@@ -525,6 +533,32 @@ const Properties = () => {
         <div
           className="absolute w-[1127px] h-[255px] left-[78px] top-[770px] bg-[rgba(21,80,9,1)] rounded-[20px]"
          />
+      </div>
+      <div className={`text-white text-left font-bold font-['Red_Rose']`}>
+        <p
+          className="absolute m-0 left-[138px] top-[832px] text-[50px] leading-[normal]"
+        >
+          Have a house to sell ?
+        </p>
+      </div>
+      <div className={`text-white text-left font-normal font-['Red_Rose']`}>
+        <p
+          className="absolute text-2xl m-0 left-[138px] top-[897px] leading-[normal]"
+        >
+          Upload your property for free
+        </p>
+      </div>
+      <div>
+        <div
+          className="absolute w-[211px] h-[59px] left-[944px] top-[864px] bg-[rgba(76,206,48,1)] rounded-[20px]"
+         />
+      </div>
+      <div className={`text-white text-left font-normal font-['Red_Rose']`}>
+        <p
+          className="absolute m-0 left-[973px] top-[872px] text-[32px] leading-[normal]"
+        >
+          mint now
+        </p>
       </div>
 
         </div>

@@ -44,35 +44,6 @@ const Jumbroton = () => {
           Enter an address, neighborhood, city or zip code
         </p>
       </div>
-
-      
-      <div className={`text-white text-left font-bold font-['Red_Rose']`}>
-        <p
-          className="absolute m-0 left-[138px] top-[832px] text-[50px] leading-[normal]"
-        >
-          Have a house to sell ?
-        </p>
-      </div>
-      <div className={`text-white text-left font-normal font-['Red_Rose']`}>
-        <p
-          className="absolute text-2xl m-0 left-[138px] top-[897px] leading-[normal]"
-        >
-          Upload your property for free
-        </p>
-      </div>
-      <div>
-        <div
-          className="absolute w-[211px] h-[59px] left-[944px] top-[864px] bg-[rgba(76,206,48,1)] rounded-[20px]"
-         />
-      </div>
-      <div className={`text-white text-left font-normal font-['Red_Rose']`}>
-        <p
-          className="absolute m-0 left-[973px] top-[872px] text-[32px] leading-[normal]"
-        >
-          mint now
-        </p>
-      </div>
-
     </div>
     );
   }
