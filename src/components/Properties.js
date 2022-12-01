@@ -1,381 +1,149 @@
-// import logo from '../assets/logo.svg';
+import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { ethers } from "ethers";
 
-const Properties = () => {
+const Properties = ({ realestate, escrow }) => {
+  const [items, setItems] = useState([]);
+  const loadMarketplaceItems = async () => {
+    // Load all unsold items
+    const itemCount = await escrow.itemCount();
+    let items = [];
+    for (let i = 1; i <= itemCount; i++) {
+      const item = await escrow.items(i);
+      if (!item.sold) {
+        // get uri url from nft contract
+        const uri = await realestate.tokenURI(item.tokenId);
+        // use uri to fetch the nft metadata stored on ipfs
+        const response = await fetch(uri);
+        const metadata = await response.json();
+        // get total price of item (item price + fee)
+        const totalPrice = await escrow.getTotalPrice(item.itemId);
+        // Add item to items array
+        items.push({
+          totalPrice,
+          itemId: item.itemId,
+          seller: item.seller,
+          name: metadata.name,
+          description: metadata.description,
+          image: metadata.image,
+        });
+      }
+    }
+    setItems(items);
+  };
+
+  const buyMarketItem = async (item) => {
+    await (
+      await escrow.purchaseItem(item.itemId, { value: item.totalPrice })
+    ).wait();
+    loadMarketplaceItems();
+  };
+
+  useEffect(() => {
+    loadMarketplaceItems();
+  }, []);
   return (
-    <div>
-      <div className={`text-white text-left font-normal font-['Red_Rose']`}>
-        <p className="absolute text-2xl m-0 left-[89px] top-[1107px] leading-[normal]">
-          Available properties
-        </p>
-      </div>
-      <div>
-        <div className="opacity-80 absolute w-[164px] h-[51px] left-[545px] top-[2100px] bg-[rgba(76,206,48,1)] rounded-[10px]" />
-      </div>
-      <div className={`text-white text-left font-normal font-['Red_Rose']`}>
-        <p className="absolute text-2xl m-0 left-[558px] top-[2110px] leading-[normal]">
-          Show more
-        </p>
-      </div>
-      <div>
-        <div className="opacity-80 absolute w-[164px] h-[51px] left-[660px] top-[2460px] bg-[rgba(76,206,48,1)] rounded-[10px]" />
-      </div>
-      <div className={`text-white text-left font-normal font-['Red_Rose']`}>
-        <p className="absolute text-2xl m-0 left-[673px] top-[2470px] leading-[normal]">
-          read more
-        </p>
-      </div>
-      <div>
-        <div className="[box-shadow:0px_0px_0px_0.5px_black_inset] [box-shadow-width:0.5px] w-36 absolute bg-white h-[51px] left-[380px] top-[1097px] rounded-[10px]" />
-      </div>
-      <div className={`text-black text-left font-normal font-['Red_Rose']`}>
-        <p className="absolute text-2xl m-0 left-[410px] top-[1107px] leading-[normal]">
-          Auction
-        </p>
-      </div>
-      <div>
-        <div className="[box-shadow:0px_0px_0px_0.5px_black_inset] [box-shadow-width:0.5px] absolute bg-white w-[129px] h-[51px] left-[547px] top-[1096px] rounded-[10px]" />
-      </div>
-      <div className={`text-black text-left font-normal font-['Red_Rose']`}>
-        <p className="absolute text-2xl m-0 left-[580px] top-[1107px] leading-[normal]">
-          NFTs
-        </p>
-      </div>
-      <div>
-        <div className="[background:url(https://uortjlczjmucmpaqqhqm.supabase.co/storage/v1/object/public/firejet-converted-images/images/57839c0263a800021f55bcb1e6d1fd2f6ec68dcb.webp)_center_/_cover,linear-gradient(0deg,_rgba(217,_217,_217,_1),_rgba(217,_217,_217,_1))] absolute w-[239px] h-[280px] left-[78px] top-[1199px] rounded-[19px]" />
-      </div>
+    <div className="container  mx-auto">
+      <section className="mb-32 text-gray-800 text-center">
+        <section className="text-gray-600 body-font mb-4">
+          <div className="container px-5 py-24 mx-auto flex items-center md:flex-row flex-col">
+            <div className="flex flex-col md:flex-row md:ml-auto md:mr-0 mx-auto items-center flex-shrink-0 space-x-4 justify-start">
+              <button className="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  className="w-6 h-6"
+                  viewBox="0 0 512 512"
+                >
+                  <path d="M99.617 8.057a50.191 50.191 0 00-38.815-6.713l230.932 230.933 74.846-74.846L99.617 8.057zM32.139 20.116c-6.441 8.563-10.148 19.077-10.148 30.199v411.358c0 11.123 3.708 21.636 10.148 30.199l235.877-235.877L32.139 20.116zM464.261 212.087l-67.266-37.637-81.544 81.544 81.548 81.548 67.273-37.64c16.117-9.03 25.738-25.442 25.738-43.908s-9.621-34.877-25.749-43.907zM291.733 279.711L60.815 510.629c3.786.891 7.639 1.371 11.492 1.371a50.275 50.275 0 0027.31-8.07l266.965-149.372-74.849-74.847z"></path>
+                </svg>
+                <span className="ml-4 flex items-start flex-col leading-none">
+                  <span className="title-font font-medium">
+                    Available properties
+                  </span>
+                </span>
+              </button>
 
-      {/* <Ellipse2 /> */}
+              <button className="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  className="w-6 h-6"
+                  viewBox="0 0 512 512"
+                >
+                  <path d="M99.617 8.057a50.191 50.191 0 00-38.815-6.713l230.932 230.933 74.846-74.846L99.617 8.057zM32.139 20.116c-6.441 8.563-10.148 19.077-10.148 30.199v411.358c0 11.123 3.708 21.636 10.148 30.199l235.877-235.877L32.139 20.116zM464.261 212.087l-67.266-37.637-81.544 81.544 81.548 81.548 67.273-37.64c16.117-9.03 25.738-25.442 25.738-43.908s-9.621-34.877-25.749-43.907zM291.733 279.711L60.815 510.629c3.786.891 7.639 1.371 11.492 1.371a50.275 50.275 0 0027.31-8.07l266.965-149.372-74.849-74.847z"></path>
+                </svg>
+                <span className="ml-4 flex items-start flex-col leading-none">
+                  <span className="title-font font-medium">Auction</span>
+                </span>
+              </button>
 
-      <div className={`text-black text-left font-medium font-['Inter']`}>
-        <p className="absolute text-sm m-0 left-[94px] top-[1500px] leading-[normal]">
-          Duplex - 2 terrace
-        </p>
-      </div>
-      <div className={`text-black text-left font-medium font-['Inter']`}>
-        <p className="absolute text-sm m-0 left-[94px] top-[1525px] leading-[normal]">
-          #20,000
-        </p>
-      </div>
-      <div className={`text-black text-left font-medium font-['Inter']`}>
-        <p className="opacity-50 absolute text-sm m-0 left-[94px] top-[1550px] leading-[normal]">
-          50%OFF
-        </p>
-      </div>
-      <div className={`text-black text-center font-normal font-['Roboto']`}>
-        <p className="absolute m-0 left-[283px] top-[1498px] text-[15px] leading-[normal]">
-          5.2
-        </p>
-      </div>
-      <div
-        className={`text-black text-center font-normal font-['Material_Icons']`}
-      >
-        <p className="left-64 absolute text-xl m-0 top-[1496px] leading-[normal]">
-          star
-        </p>
-      </div>
-      <div
-        className={`text-black text-center font-normal font-['Material_Icons']`}
-      >
-        <p className="left-64 absolute text-xl m-0 top-[1496px] leading-[normal]">
-          star
-        </p>
-      </div>
-      <div>
-        <div className="[box-shadow:0px_0px_0px_1px_rgba(76,_206,_48,_1)_inset] [box-shadow-width:1px] absolute w-[239px] h-[386px] left-[78px] top-[1199px] bg-[rgba(255,255,255,0)] rounded-[20px]" />
-      </div>
-      <div>
-        <div className="[background:url(https://uortjlczjmucmpaqqhqm.supabase.co/storage/v1/object/public/firejet-converted-images/images/ddfb7f75693433adc91180d588a6b00d734fd533.webp)_center_/_cover,linear-gradient(0deg,_rgba(217,_217,_217,_1),_rgba(217,_217,_217,_1))] absolute w-[239px] h-[280px] left-[366px] top-[1199px] rounded-[19px]" />
-      </div>
-      {/* <Ellipse3 /> */}
-      <div className={`text-black text-left font-medium font-['Inter']`}>
-        <p className="absolute text-sm m-0 left-[382px] top-[1500px] leading-[normal]">
-          Duplex - 2 terrace
-        </p>
-      </div>
-      <div className={`text-black text-left font-medium font-['Inter']`}>
-        <p className="absolute text-sm m-0 left-[382px] top-[1525px] leading-[normal]">
-          #20,000
-        </p>
-      </div>
-      <div className={`text-black text-left font-medium font-['Inter']`}>
-        <p className="opacity-50 absolute text-sm m-0 left-[382px] top-[1550px] leading-[normal]">
-          50%OFF
-        </p>
-      </div>
-      <div className={`text-black text-center font-normal font-['Roboto']`}>
-        <p className="absolute m-0 left-[571px] top-[1498px] text-[15px] leading-[normal]">
-          5.2
-        </p>
-      </div>
-      <div
-        className={`text-black text-center font-normal font-['Material_Icons']`}
-      >
-        <p className="absolute text-xl m-0 left-[544px] top-[1496px] leading-[normal]">
-          star
-        </p>
-      </div>
-      <div
-        className={`text-black text-center font-normal font-['Material_Icons']`}
-      >
-        <p className="absolute text-xl m-0 left-[544px] top-[1496px] leading-[normal]">
-          star
-        </p>
-      </div>
-      <div>
-        <div className="[box-shadow:0px_0px_0px_1px_rgba(76,_206,_48,_1)_inset] [box-shadow-width:1px] absolute w-[239px] h-[386px] left-[366px] top-[1199px] bg-[rgba(255,255,255,0)] rounded-[20px]" />
-      </div>
-      <div>
-        <div className="[background:url(https://uortjlczjmucmpaqqhqm.supabase.co/storage/v1/object/public/firejet-converted-images/images/78a10f8bd740d3fb4ae9473c5b0356260c63e413.webp)_center_/_cover,linear-gradient(0deg,_rgba(217,_217,_217,_1),_rgba(217,_217,_217,_1))] absolute w-[239px] h-[280px] left-[660px] top-[1199px] rounded-[19px]" />
-      </div>
-      {/* <Ellipse4 /> */}
-      <div className={`text-black text-left font-medium font-['Inter']`}>
-        <p className="absolute text-sm m-0 left-[676px] top-[1500px] leading-[normal]">
-          Duplex - 2 terrace
-        </p>
-      </div>
-      <div className={`text-black text-left font-medium font-['Inter']`}>
-        <p className="absolute text-sm m-0 left-[676px] top-[1525px] leading-[normal]">
-          #20,000
-        </p>
-      </div>
-      <div className={`text-black text-left font-medium font-['Inter']`}>
-        <p className="opacity-50 absolute text-sm m-0 left-[676px] top-[1550px] leading-[normal]">
-          50%OFF
-        </p>
-      </div>
-      <div className={`text-black text-center font-normal font-['Roboto']`}>
-        <p className="absolute m-0 left-[865px] top-[1498px] text-[15px] leading-[normal]">
-          5.2
-        </p>
-      </div>
-      <div
-        className={`text-black text-center font-normal font-['Material_Icons']`}
-      >
-        <p className="absolute text-xl m-0 left-[838px] top-[1496px] leading-[normal]">
-          star
-        </p>
-      </div>
-      <div
-        className={`text-black text-center font-normal font-['Material_Icons']`}
-      >
-        <p className="absolute text-xl m-0 left-[838px] top-[1496px] leading-[normal]">
-          star
-        </p>
-      </div>
-      <div>
-        <div className="[box-shadow:0px_0px_0px_1px_rgba(76,_206,_48,_1)_inset] [box-shadow-width:1px] absolute w-[239px] h-[386px] left-[660px] top-[1199px] bg-[rgba(255,255,255,0)] rounded-[20px]" />
-      </div>
-      <div>
-        <div className="[background:url(https://uortjlczjmucmpaqqhqm.supabase.co/storage/v1/object/public/firejet-converted-images/images/b57b39a73b7b2205db3d55547ca6e75755a372bc.webp)_center_/_cover,linear-gradient(0deg,_rgba(217,_217,_217,_1),_rgba(217,_217,_217,_1))] absolute w-[239px] h-[280px] left-[943px] top-[1199px] rounded-[19px]" />
-      </div>
-      {/* <Ellipse5 /> */}
-      <div className={`text-black text-left font-medium font-['Inter']`}>
-        <p className="absolute text-sm m-0 left-[959px] top-[1500px] leading-[normal]">
-          Duplex - 2 terrace
-        </p>
-      </div>
-      <div className={`text-black text-left font-medium font-['Inter']`}>
-        <p className="absolute text-sm m-0 left-[959px] top-[1525px] leading-[normal]">
-          #20,000
-        </p>
-      </div>
-      <div className={`text-black text-left font-medium font-['Inter']`}>
-        <p className="opacity-50 absolute text-sm m-0 left-[959px] top-[1550px] leading-[normal]">
-          50%OFF
-        </p>
-      </div>
-      <div className={`text-black text-center font-normal font-['Roboto']`}>
-        <p className="absolute m-0 left-[1148px] top-[1498px] text-[15px] leading-[normal]">
-          5.2
-        </p>
-      </div>
-      <div
-        className={`text-black text-center font-normal font-['Material_Icons']`}
-      >
-        <p className="absolute text-xl m-0 left-[1121px] top-[1496px] leading-[normal]">
-          star
-        </p>
-      </div>
-      <div
-        className={`text-black text-center font-normal font-['Material_Icons']`}
-      >
-        <p className="absolute text-xl m-0 left-[1121px] top-[1496px] leading-[normal]">
-          star
-        </p>
-      </div>
-      <div>
-        <div className="[box-shadow:0px_0px_0px_1px_rgba(76,_206,_48,_1)_inset] [box-shadow-width:1px] absolute w-[239px] h-[386px] left-[943px] top-[1199px] bg-[rgba(255,255,255,0)] rounded-[20px]" />
-      </div>
-      <div>
-        <div className="[background:url(https://uortjlczjmucmpaqqhqm.supabase.co/storage/v1/object/public/firejet-converted-images/images/cf4815f4c056778634f005676b5b6c7d7eb9e561.webp)_center_/_cover,linear-gradient(0deg,_rgba(217,_217,_217,_1),_rgba(217,_217,_217,_1))] absolute w-[239px] h-[280px] left-[78px] top-[1652px] rounded-[19px]" />
-      </div>
-      {/* <Ellipse6 /> */}
-      <div className={`text-black text-left font-medium font-['Inter']`}>
-        <p className="absolute text-sm m-0 left-[94px] top-[1953px] leading-[normal]">
-          Duplex - 2 terrace
-        </p>
-      </div>
-      <div className={`text-black text-left font-medium font-['Inter']`}>
-        <p className="absolute text-sm m-0 left-[94px] top-[1978px] leading-[normal]">
-          #20,000
-        </p>
-      </div>
-      <div className={`text-black text-left font-medium font-['Inter']`}>
-        <p className="opacity-50 absolute text-sm m-0 left-[94px] top-[2003px] leading-[normal]">
-          50%OFF
-        </p>
-      </div>
-      <div className={`text-black text-center font-normal font-['Roboto']`}>
-        <p className="absolute m-0 left-[283px] top-[1951px] text-[15px] leading-[normal]">
-          5.2
-        </p>
-      </div>
-      <div
-        className={`text-black text-center font-normal font-['Material_Icons']`}
-      >
-        <p className="left-64 absolute text-xl m-0 top-[1949px] leading-[normal]">
-          star
-        </p>
-      </div>
-      <div
-        className={`text-black text-center font-normal font-['Material_Icons']`}
-      >
-        <p className="left-64 absolute text-xl m-0 top-[1949px] leading-[normal]">
-          star
-        </p>
-      </div>
-      <div>
-        <div className="[box-shadow:0px_0px_0px_1px_rgba(76,_206,_48,_1)_inset] [box-shadow-width:1px] absolute w-[239px] h-[386px] left-[78px] top-[1652px] bg-[rgba(255,255,255,0)] rounded-[20px]" />
-      </div>
-      <div>
-        <div className="[background:url(https://uortjlczjmucmpaqqhqm.supabase.co/storage/v1/object/public/firejet-converted-images/images/ddfb7f75693433adc91180d588a6b00d734fd533.webp)_center_/_cover,linear-gradient(0deg,_rgba(217,_217,_217,_1),_rgba(217,_217,_217,_1))] absolute w-[239px] h-[280px] left-[366px] top-[1652px] rounded-[19px]" />
-      </div>
-      {/* <Ellipse7 /> */}
-      <div className={`text-black text-left font-medium font-['Inter']`}>
-        <p className="absolute text-sm m-0 left-[382px] top-[1953px] leading-[normal]">
-          Duplex - 2 terrace
-        </p>
-      </div>
-      <div className={`text-black text-left font-medium font-['Inter']`}>
-        <p className="absolute text-sm m-0 left-[382px] top-[1978px] leading-[normal]">
-          #20,000
-        </p>
-      </div>
-      <div className={`text-black text-left font-medium font-['Inter']`}>
-        <p className="opacity-50 absolute text-sm m-0 left-[382px] top-[2003px] leading-[normal]">
-          50%OFF
-        </p>
-      </div>
-      <div className={`text-black text-center font-normal font-['Roboto']`}>
-        <p className="absolute m-0 left-[571px] top-[1951px] text-[15px] leading-[normal]">
-          5.2
-        </p>
-      </div>
-      <div
-        className={`text-black text-center font-normal font-['Material_Icons']`}
-      >
-        <p className="absolute text-xl m-0 left-[544px] top-[1949px] leading-[normal]">
-          star
-        </p>
-      </div>
-      <div
-        className={`text-black text-center font-normal font-['Material_Icons']`}
-      >
-        <p className="absolute text-xl m-0 left-[544px] top-[1949px] leading-[normal]">
-          star
-        </p>
-      </div>
-      <div>
-        <div className="[box-shadow:0px_0px_0px_1px_rgba(76,_206,_48,_1)_inset] [box-shadow-width:1px] absolute w-[239px] h-[386px] left-[366px] top-[1652px] bg-[rgba(255,255,255,0)] rounded-[20px]" />
-      </div>
-      <div>
-        <div className="[background:url(https://uortjlczjmucmpaqqhqm.supabase.co/storage/v1/object/public/firejet-converted-images/images/f69658e5c36b3929f04e01ad43284032ad78308d.webp)_center_/_cover,linear-gradient(0deg,_rgba(217,_217,_217,_1),_rgba(217,_217,_217,_1))] absolute w-[239px] h-[280px] left-[660px] top-[1652px] rounded-[19px]" />
-      </div>
-      {/* <Ellipse8 /> */}
-      <div className={`text-black text-left font-medium font-['Inter']`}>
-        <p className="absolute text-sm m-0 left-[676px] top-[1953px] leading-[normal]">
-          Duplex - 2 terrace
-        </p>
-      </div>
-      <div className={`text-black text-left font-medium font-['Inter']`}>
-        <p className="absolute text-sm m-0 left-[676px] top-[1978px] leading-[normal]">
-          #20,000
-        </p>
-      </div>
-      <div className={`text-black text-left font-medium font-['Inter']`}>
-        <p className="opacity-50 absolute text-sm m-0 left-[676px] top-[2003px] leading-[normal]">
-          50%OFF
-        </p>
-      </div>
-      <div className={`text-black text-center font-normal font-['Roboto']`}>
-        <p className="absolute m-0 left-[865px] top-[1951px] text-[15px] leading-[normal]">
-          5.2
-        </p>
-      </div>
-      <div
-        className={`text-black text-center font-normal font-['Material_Icons']`}
-      >
-        <p className="absolute text-xl m-0 left-[838px] top-[1949px] leading-[normal]">
-          star
-        </p>
-      </div>
-      <div
-        className={`text-black text-center font-normal font-['Material_Icons']`}
-      >
-        <p className="absolute text-xl m-0 left-[838px] top-[1949px] leading-[normal]">
-          star
-        </p>
-      </div>
-      <div>
-        <div className="[box-shadow:0px_0px_0px_1px_rgba(76,_206,_48,_1)_inset] [box-shadow-width:1px] absolute w-[239px] h-[386px] left-[660px] top-[1652px] bg-[rgba(255,255,255,0)] rounded-[20px]" />
-      </div>
-      <div>
-        <div className="[background:url(https://uortjlczjmucmpaqqhqm.supabase.co/storage/v1/object/public/firejet-converted-images/images/2274b1b488e5d264dda67d96c764cf0173ac6895.webp)_center_/_cover,linear-gradient(0deg,_rgba(217,_217,_217,_1),_rgba(217,_217,_217,_1))] absolute w-[239px] h-[280px] left-[943px] top-[1652px] rounded-[19px]" />
-      </div>
-      {/* <Ellipse9 /> */}
-      <div className={`text-black text-left font-medium font-['Inter']`}>
-        <p className="absolute text-sm m-0 left-[959px] top-[1953px] leading-[normal]">
-          Duplex - 2 terrace
-        </p>
-      </div>
-      <div className={`text-black text-left font-medium font-['Inter']`}>
-        <p className="absolute text-sm m-0 left-[959px] top-[1978px] leading-[normal]">
-          #20,000
-        </p>
-      </div>
-      <div className={`text-black text-left font-medium font-['Inter']`}>
-        <p className="opacity-50 absolute text-sm m-0 left-[959px] top-[2003px] leading-[normal]">
-          50%OFF
-        </p>
-      </div>
-      <div className={`text-black text-center font-normal font-['Roboto']`}>
-        <p className="absolute m-0 left-[1148px] top-[1951px] text-[15px] leading-[normal]">
-          5.2
-        </p>
-      </div>
-      <div
-        className={`text-black text-center font-normal font-['Material_Icons']`}
-      >
-        <p className="absolute text-xl m-0 left-[1121px] top-[1949px] leading-[normal]">
-          star
-        </p>
-      </div>
-      <div
-        className={`text-black text-center font-normal font-['Material_Icons']`}
-      >
-        <p className="absolute text-xl m-0 left-[1121px] top-[1949px] leading-[normal]">
-          star
-        </p>
-      </div>
-      <div>
-        <div className="[box-shadow:0px_0px_0px_1px_rgba(76,_206,_48,_1)_inset] [box-shadow-width:1px] absolute w-[239px] h-[386px] left-[943px] top-[1652px] bg-[rgba(255,255,255,0)] rounded-[20px]" />
-      </div>
-      <div>
-        <div className="[background:url(https://uortjlczjmucmpaqqhqm.supabase.co/storage/v1/object/public/firejet-converted-images/images/6bc0577adfa9457f8420628004f117d19545724e.webp)_no-repeat_center_/_contain] absolute w-[31px] h-[43px] left-[942px] top-[441px]" />
-      </div>
-      <div>
-        <div className="absolute w-[1127px] h-[255px] left-[78px] top-[770px] bg-[rgba(21,80,9,1)] rounded-[20px]" />
-      </div>
+              <button className="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  className="w-6 h-6"
+                  viewBox="0 0 512 512"
+                >
+                  <path d="M99.617 8.057a50.191 50.191 0 00-38.815-6.713l230.932 230.933 74.846-74.846L99.617 8.057zM32.139 20.116c-6.441 8.563-10.148 19.077-10.148 30.199v411.358c0 11.123 3.708 21.636 10.148 30.199l235.877-235.877L32.139 20.116zM464.261 212.087l-67.266-37.637-81.544 81.544 81.548 81.548 67.273-37.64c16.117-9.03 25.738-25.442 25.738-43.908s-9.621-34.877-25.749-43.907zM291.733 279.711L60.815 510.629c3.786.891 7.639 1.371 11.492 1.371a50.275 50.275 0 0027.31-8.07l266.965-149.372-74.849-74.847z"></path>
+                </svg>
+                <span className="ml-4 flex items-start flex-col leading-none">
+                  <span className="title-font font-medium">NFTs</span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </section>
+        {items.length > 0 ? (
+          <div className="grid lg:grid-cols-4 gap-6 xl:gap-x-12">
+            {items.map((item, idx) => (
+              <Link to="/property">
+                <div className="mb-6 lg:mb-0" key={idx}>
+                  <div className="relative block bg-white rounded-lg shadow-lg">
+                    <div className="flex">
+                      <div
+                        className="relative overflow-hidden bg-no-repeat bg-cover shadow-lg rounded-lg mx-4 -mt-4"
+                        data-mdb-ripple="true"
+                        data-mdb-ripple-color="light"
+                      >
+                        <img src={item.image} className="w-full" alt="" />
+                        <a href="/">
+                          <div className="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 hover:opacity-100 transition duration-300 ease-in-out"></div>
+                        </a>
+                      </div>
+                    </div>
+                    <div className="p-6">
+                      <h5 className="font-bold text-lg mb-3">{item.name}</h5>
+                      <p className="text-gray-500 mb-4">
+                        {item.price} ETH
+                        {/* <small>
+                          Published <u>13.01.2022</u> by
+                          <a href="/" className="text-gray-900">
+                            Anna Maria Doe
+                          </a>
+                        </small> */}
+                      </p>
+                      <p className="mb-4 pb-2">{item.description}</p>
+                      {/* <a
+                        href="/"
+                        data-mdb-ripple="true"
+                        data-mdb-ripple-color="light"
+                        className="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+                      >
+                        Read more
+                      </a> */}
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        ) : (
+          <main style={{ padding: "1rem 0" }}>
+            <h2>No listed assets</h2>
+          </main>
+        )}
+      </section>
     </div>
   );
 };

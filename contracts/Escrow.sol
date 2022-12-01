@@ -1,103 +1,102 @@
-//SPDX-License-Identifier: Unlicense
-pragma solidity ^0.8.0;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.4;
 
-interface IERC721 {
-    function transferFrom(
-        address _from,
-        address _to,
-        uint256 _id
-    ) external;
-}
+import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
 
-contract Escrow{
-    address public nftAddress; 
-    address payable public seller;
-    address public agent;
-    mapping (uint256 => bool) public isListed;
-    mapping (uint256 => uint256) public purchasePrice;
-    mapping (uint256 => uint256) public escrowAmount;
-    mapping (uint256 => address) public buyer;
-    mapping (uint256 => bool) public status;
-    mapping(uint256 => mapping(address => bool)) public approvalStatus;
+import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 
+import "hardhat/console.sol";
 
-    constructor(address _nftAddress, address payable _seller, address _agent){
-        nftAddress = _nftAddress;
-        seller = _seller;
-        agent = _agent;
-    }
-    modifier onlySeller (){
-        require (msg.sender == seller, "Only Seller is permitted");
-        _;
+contract Escrow is ReentrancyGuard {
+
+    // Variables
+    address payable public immutable feeAccount; // the account that receives fees
+    uint public immutable feePercent; // the fee percentage on sales 
+    uint public itemCount; 
+
+    struct Item {
+        uint itemId;
+        IERC721 nft;
+        uint tokenId;
+        uint price;
+        address payable seller;
+        bool sold;
     }
 
-    modifier onlyBuyer(uint256 _nftID){
-        require(msg.sender == buyer[_nftID], "Only Buyer is permitted");  
-        _;      
+    // itemId -> Item
+    mapping(uint => Item) public items;
+
+    event Offered(
+        uint itemId,
+        address indexed nft,
+        uint tokenId,
+        uint price,
+        address indexed seller
+    );
+    event Bought(
+        uint itemId,
+        address indexed nft,
+        uint tokenId,
+        uint price,
+        address indexed seller,
+        address indexed buyer
+    );
+
+    constructor(uint _feePercent) {
+        feeAccount = payable(msg.sender);
+        feePercent = _feePercent;
     }
 
-    modifier onlyInspector(){
-        require( msg.sender == agent ,"You are not authorized to inspect the project");
-        _;
-    }
-
-    receive() external payable{}
-
-    function getBalance() public view returns (uint256){
-        return address(this).balance;
-    }
-
-    function sellerActivity (uint256 _nftID, 
-    uint256 _purchasePrice, 
-    uint256 _escrowAmount, 
-    address _buyer) public payable onlySeller{
-        IERC721(nftAddress).transferFrom(msg.sender, address(this), _nftID);
-
-        isListed[_nftID] = true;
-        purchasePrice[_nftID] = _purchasePrice;
-        escrowAmount[_nftID] = _escrowAmount;
-        buyer[_nftID] = _buyer;
-
-    }
-
-    function buyerActivity (uint256 _nftID) public payable onlyBuyer(_nftID){
-        require(msg.value >=  escrowAmount[_nftID], "Insufficient Amount");
-    }
-    
-    function inspectorActivity(uint256 _nftID, bool _status) public onlyInspector{
-        status[ _nftID] =  _status;
-    }
-
-    function approvalSale(uint256 _nftID) public {
-        approvalStatus[_nftID][msg.sender] = true;
-    }
-
-    function sale(uint256 _nftID) public {
-        require(status[_nftID]);
-        require(approvalStatus[_nftID][buyer[_nftID]]);
-        require(approvalStatus[_nftID][seller]);
-        require(approvalStatus[_nftID][agent]);    
-        require(address(this).balance >= purchasePrice[_nftID]);
-
-        isListed[_nftID] = false;
-
-        (bool success, ) = payable(seller).call{value: address(this).balance}(
-            ""
+    // Make item to offer on the marketplace
+    function makeItem(IERC721 _nft, uint _tokenId, uint _price) external nonReentrant {
+        require(_price > 0, "Price must be greater than zero");
+        // increment itemCount
+        itemCount ++;
+        // transfer nft
+        _nft.transferFrom(msg.sender, address(this), _tokenId);
+        // add new item to items mapping
+        items[itemCount] = Item (
+            itemCount,
+            _nft,
+            _tokenId,
+            _price,
+            payable(msg.sender),
+            false
         );
-        require(success);
-
-        IERC721(nftAddress).transferFrom(address(this), buyer[_nftID], _nftID);
-
+        // emit Offered event
+        emit Offered(
+            itemCount,
+            address(_nft),
+            _tokenId,
+            _price,
+            msg.sender
+        );
     }
 
-    function cancelSale(uint256 _nftID) public {
-        if (status[_nftID] == false) {
-            payable(buyer[_nftID]).transfer(address(this).balance);
-        } else {
-            payable(seller).transfer(address(this).balance);
-        }
+    function purchaseItem(uint _itemId) external payable nonReentrant {
+        uint _totalPrice = getTotalPrice(_itemId);
+        Item storage item = items[_itemId];
+        require(_itemId > 0 && _itemId <= itemCount, "item doesn't exist");
+        require(msg.value >= _totalPrice, "not enough ether to cover item price and market fee");
+        require(!item.sold, "item already sold");
+        // pay seller and feeAccount
+        item.seller.transfer(item.price);
+        feeAccount.transfer(_totalPrice - item.price);
+        // update item to sold
+        item.sold = true;
+        // transfer nft to buyer
+        item.nft.transferFrom(address(this), msg.sender, item.tokenId);
+        // emit Bought event
+        emit Bought(
+            _itemId,
+            address(item.nft),
+            item.tokenId,
+            item.price,
+            item.seller,
+            msg.sender
+        );
     }
-
-
-
+    function getTotalPrice(uint _itemId) view public returns(uint){
+        return((items[_itemId].price*(100 + feePercent))/100);
+    }
 }

@@ -37,3 +37,9 @@ npx tailwindcss init -p
 
 npm install postcss@latest -->
 
+
+<!-- https://tailblocks.cc/ -->
+
+<!-- https://flowbite.com/docs -->
+
+<!-- https://tailwind-elements.com/docs/standard/components/cards/ -->

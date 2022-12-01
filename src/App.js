@@ -1,89 +1,93 @@
-// import { useEffect, useState } from 'react';
-// import { ethers } from 'ethers';
+import { useState } from "react";
+import { ethers } from "ethers";
 
-import { MoralisProvider } from "react-moralis";
-
-// Components
-import Navigation from "./components/Navigation";
-import Jumbroton from "./components/Jumbroton";
-import Properties from "./components/Properties";
-import Blog from "./components/Blog";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-import EscrowAbi from "../src/abis/contractsData/Escrow.json";
-import EscrowAddress from "../src/abis/contractsData/Escrow-address.json";
+import RealEstateAbi from "../src/abis/contractsData/RealEstate.json";
 import RealEstateAddress from "../src/abis/contractsData/RealEstate-address.json";
-import RealEstateAbi from "../src/abis/contractsData/RealEstate-address.json";
+import EscrowAbi from "../src/abis/contractsData/RealEstate.json";
+import EscrowAddress from "../src/abis/contractsData/RealEstate-address.json";
+
+import Home from "./pages/Home";
+import Community from "./pages/Community";
+import Property from "./pages/Property";
+import NotFoundPage from "./pages/NotFoundPage";
+import Navigation from "./components/Navigation";
 
 // import Search from './components/Search';
 // import Home from './components/Home';
 
 // Config
 // import config from './config.json';
+import { Route, Routes } from "react-router-dom";
 
 function App() {
-  const [provider, setProvider] = useState(null);
-  const [escrow, setEscrow] = useState(null);
-  const [realestate, setrealEstate] = useState(null);
   const [account, setAccount] = useState(null);
-
-  const [homes, setHomes] = useState([]);
-  const [home, setHome] = useState({});
-  const [toggle, setToggle] = useState(false);
-
-  const loadBlockchainData = async () => {
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
-    setProvider(provider);
-
-    const realEstate = new ethers.Contract(
-      RealEstateAddress,
-      RealEstateAbi,
-      provider
-    );
-    const totalSupply = await realEstate.totalSupply();
-    const homes = [];
-
-    for (var i = 1; i <= totalSupply; i++) {
-      const uri = await realEstate.tokenURI(i);
-      const response = await fetch(uri);
-      const metadata = await response.json();
-      homes.push(metadata);
-    }
-
-    setHomes(homes);
-
-    const escrow = new ethers.Contract(EscrowAddress, EscrowAbi, provider);
-    setEscrow(escrow);
-
-    window.ethereum.on("accountsChanged", async () => {
-      const accounts = await window.ethereum.request({
-        method: "eth_requestAccounts",
-      });
-      const account = ethers.utils.getAddress(accounts[0]);
-      setAccount(account);
+  const [realestate, setrealEstate] = useState({});
+  const [escrow, setEscrow] = useState({});
+  // MetaMask Login/Connect
+  const web3Handler = async () => {
+    const accounts = await window.ethereum.request({
+      method: "eth_requestAccounts",
     });
+    setAccount(accounts[0]);
+    // Get provider from Metamask
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    // Set signer
+    const signer = provider.getSigner();
+
+    window.ethereum.on("chainChanged", (chainId) => {
+      window.location.reload();
+    });
+
+    window.ethereum.on("accountsChanged", async function (accounts) {
+      setAccount(accounts[0]);
+      await web3Handler();
+    });
+    loadContracts(signer);
   };
-
-  useEffect(() => {
-    loadBlockchainData();
-  }, []);
-
-  const togglePop = (home) => {
-    setHome(home);
-    toggle ? setToggle(false) : setToggle(true);
+  const loadContracts = async (signer) => {
+    // Get deployed copies of contracts
+    const realestate = new ethers.Contract(
+      RealEstateAddress.address,
+      RealEstateAbi.abi,
+      signer
+    );
+    setrealEstate(realestate);
+    const escrow = new ethers.Contract(
+      EscrowAddress.address,
+      EscrowAbi.abi,
+      signer
+    );
+    setEscrow(escrow);
   };
 
   return (
-    <MoralisProvider initializeOnMount={false}>
-      <div className="relative bg-white w-[1280px] h-[4142px] overflow-clip">
-        <Navigation />
-        <Jumbroton />
-        <Properties />
-        <Blog />
-        <Contact />
-        <Footer />
-      </div>
-    </MoralisProvider>
+    <div>
+      {/* <>
+        <Navigation web3Handler={web3Handler} account={account} />
+      </> */}
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Home
+              escrow={escrow}
+              realestate={realestate}
+              web3Handler={web3Handler}
+              account={account}
+            />
+          }
+        ></Route>
+        <Route
+          path="/community"
+          element={<Community escrow={escrow} realestate={realestate} />}
+        ></Route>
+        <Route
+          path="/property"
+          element={<Property escrow={escrow} realestate={realestate} />}
+        ></Route>
+        <Route path="*" component={<NotFoundPage />} />
+      </Routes>
+    </div>
   );
 }
 
