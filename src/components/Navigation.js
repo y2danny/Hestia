@@ -23,7 +23,7 @@ const Navigation = () => {
             <p
               className="absolute text-xl m-0 left-[357px] top-[65px] leading-[normal]"
             >
-              <Link exact to="/" className="">Home</Link>
+              <Link to="/" className="">Home</Link>
             </p>
           </div>
           <div

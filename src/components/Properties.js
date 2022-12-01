@@ -11,8 +11,16 @@ import {
   Link,
 } from "react-router-dom";
 
+import Mint from "./Mint";
+
+
 
 const Properties = () => {
+   function showDialog() {
+        document.getElementById("openDialog").style.display = "block";
+        document.getElementById("overlay").style.display = "block";
+    }
+
     return (
         <div>
       <div className={`text-white text-left font-normal font-['Red_Rose']`}>
@@ -559,14 +567,48 @@ const Properties = () => {
          />
       </div>
       <div className={`text-white text-left font-normal font-['Red_Rose']`}>
-        <p
+        <button
           className="absolute m-0 left-[973px] top-[872px] text-[32px] leading-[normal]"
+          onClick={showDialog}
         >
           mint now
-        </p>
+        </button>
       </div>
 
+      <div
+            id="overlay"
+            className="
+                fixed
+                inset-0
+                z-40
+                hidden
+                h-screen
+                w-screen
+                bg-gray-900 bg-opacity-60
+            "
+        ></div>
+            <div
+            id="openDialog"
+            className="
+                fixed
+                top-1/2
+                left-1/2
+                z-50
+                hidden
+                w-96
+                -translate-x-1/2 -translate-y-1/2
+                space-y-5
+                rounded-md
+                bg-white
+                px-8
+                py-6
+                drop-shadow-lg
+            "
+        >
+          <Mint/>
         </div>
+
+    </div>
     );
   }
   

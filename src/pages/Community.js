@@ -6,6 +6,7 @@
 // import Ellipse11 from "assets/Ellipse11";
 // import RiCopyrightLine1 from "assets/RiCopyrightLine1";
 import Navigation from '../components/Navigation';
+import Footer from '../components/Footer';
 
 
 function Community() {
@@ -139,6 +140,7 @@ function Community() {
           Frontend Developer
         </p>
       </div>
+      <Footer />
       <div>
         <div
           className="[box-shadow:0px_0px_0px_1px_rgba(76,_206,_48,_1)_inset] [box-shadow-width:1px] absolute w-[1351.1163330078125px] h-[333.0223083496094px] left-[-57px] top-[2864.31px] bg-[rgba(69,255,29,0.05)] rounded-[20px]"
@@ -152,13 +154,13 @@ function Community() {
       {/* <Vector />
       <Instagram216721958 />
       <Twitter241721979 /> */}
-      <div className="font-normal text-[rgba(247,247,247,1)]">
+      {/* <div className="font-normal text-[rgba(247,247,247,1)]">
         <p
           className="absolute text-lg leading-4 m-0 h-[18.47px] w-[121.67px] left-[15.3%] right-[75.19%] top-[75.75%] bottom-[23.67%]"
         >
           2022 Hestia
         </p>
-      </div>
+      </div> */}
       {/* <RiCopyrightLine /> */}
       <div className="text-[rgba(21,80,9,1)]">
         <div
@@ -195,7 +197,7 @@ function Community() {
               </p>
             </div>
           </div>
-          <div className="relative w-[84px] h-[164px]">
+          {/* <div className="relative w-[84px] h-[164px]">
             <p
               className="left-0 top-0 absolute text-lg font-bold inline m-0 right-[29.76%] bottom-[86.59%] leading-[normal]"
             >
@@ -225,7 +227,7 @@ function Community() {
                 Learn more
               </p>
             </div>
-          </div>
+          </div> */}
           <div className="relative w-[79px] h-[164px]">
             <p
               className="inset-x-0 top-0 absolute text-lg font-bold inline m-0 bottom-[86.59%] leading-[normal]"
