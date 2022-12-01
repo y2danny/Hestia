@@ -1,0 +1,104 @@
+.container{
+    background: url(../assets/container.png);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 50rem;
+    background-repeat: no-repeat;
+    margin-left: 10rem;
+    margin-top: 12rem;
+    margin-bottom: -12rem;
+}
+
+h1{
+    font-size: 3rem;
+    color: white;
+    font-weight: 700;
+}
+h3{
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+input{
+    border-radius: 10px;
+    width: 35rem;
+    height: 3rem;
+    text-indent: 12px;
+}
+
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 20px;
+    margin-top: -18rem;
+    margin-right: 5rem;
+}
+
+.search{
+    display: flex;
+    flex-direction: row;
+    margin-right: 6rem;
+}
+
+button{
+    width: 61px;
+    height: 3rem;
+    left: 936px;
+    top: 425px;
+    color: white;
+    background: #4CCE30;
+    border-radius: 10px;
+    margin-left: 20px;
+}
+
+.property{
+    width: 1127px;
+    height: 255px;
+    margin-left: 10rem;
+background: #155009;
+border-radius: 20px;
+   padding-top:-10rem;
+   display: flex;
+   justify-content:flex-start;
+   align-items: flex-start;
+   flex-direction: row;
+   gap: 12rem;
+}
+
+.prop{
+    color: white;
+    margin-left: 5rem;
+    margin-top: 4rem;
+    
+}
+
+.prop h2{
+    font-weight: 700;
+font-size: 50px;
+line-height: 62px;
+margin-bottom: 10px;
+}
+
+.prop p{
+    font-weight: 400;
+font-size: 24px;
+line-height: 30px;
+}
+
+
+.btn button{
+    font-weight: 400;
+font-size: 32px;
+line-height: 40px;
+width: 211px;
+height: 59px;
+left: 944px;
+top: 864px;
+margin-top: 6rem;
+}

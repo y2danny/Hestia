@@ -17,12 +17,18 @@ const Home = ({ home, provider, escrow, togglePop }) => {
 
     return (
         <div>
+        <div className="flex flex-col h-screen justify-between">
+            <header className="h-10 bg-red-500">
             <Navigation />
+            </header>
+            <main className="mb-auto flex-grow py-4 bg-white">
             <Jumbroton />
             <Properties />
             <Blog />
             <Contact />
+            </main>
             <Footer />
+        </div>
         </div>
     );
 }
