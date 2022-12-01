@@ -1,28 +1,31 @@
+import Group from '../assets/Group.png';
+import Arch from '../assets/arch.png';
+import Bus from '../assets/bus.png';
 
 const Blog = () => {
     return (
-<section className="text-gray-600 body-font overflow-hidden">
-    <div className="container mx-auto">
-      <div className="lg:w-full mx-auto flex flex-wrap">
-        <img alt="ecommerce" className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src="https://dummyimage.com/400x400"/>
+<section className="text-gray-600 body-font overflow-hidden pl-10">
+    <div className="container mx-auto ml-10">
+      <div className="lg:w-full mx-auto flex flex-wrap ml-10">
+        <img alt="ecommerce" className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src={Group}/>
         <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
           <h2 className="text-sm title-font text-gray-500 tracking-widest">Hot</h2>
           <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">How to invest in Real Estate<br />using Hestia</h1>
           <div className="flex mb-4">
             <span className="flex items-center">
-              <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-4 h-4 text-purple-500" viewBox="0 0 24 24">
+              <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-4 h-4 text-green-600" viewBox="0 0 24 24">
                 <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
               </svg>
-              <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-4 h-4 text-purple-500" viewBox="0 0 24 24">
+              <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-4 h-4 text-green-600" viewBox="0 0 24 24">
                 <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
               </svg>
-              <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-4 h-4 text-purple-500" viewBox="0 0 24 24">
+              <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-4 h-4 text-green-600" viewBox="0 0 24 24">
                 <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
               </svg>
-              <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-4 h-4 text-purple-500" viewBox="0 0 24 24">
+              <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-4 h-4 text-green-600" viewBox="0 0 24 24">
                 <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
               </svg>
-              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-4 h-4 text-purple-500" viewBox="0 0 24 24">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-4 h-4 text-green-600" viewBox="0 0 24 24">
                 <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
               </svg>
               <span className="text-gray-600 ml-3">4 Reviews</span>
@@ -50,10 +53,10 @@ const Blog = () => {
           <br />
           mint properties for free as NFTs.
           </p>
-          <button className="text-white bg-purple-500 border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded">Read more</button>
+          <button className="text-white bg-green-600 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded">Read more</button>
           <div className="flex mt-8">
-            <button className="title-font font-medium text-2xl text-white bg-purple-500 border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded">Architecture</button>
-            <button className="flex ml-auto title-font font-medium text-2xl text-white bg-purple-500 border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded">Business</button>
+            <button className="title-font font-medium text-2xl text-white  border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded"><img src={Arch}/></button>
+            <button className="flex mr-20 title-font font-medium text-2xl text-white  border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded"><img src={Bus}/></button>
           </div>
         </div>
       </div>

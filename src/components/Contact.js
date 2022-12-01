@@ -1,3 +1,4 @@
+import Rectangle from '../assets/Rectangle.png';
 
 const Contact = () => {
     return (
@@ -11,7 +12,7 @@ const Contact = () => {
 
     <div className="container mx-auto flex sm:flex-nowrap flex-wrap">
       <div className="lg:w-2/3 md:w-1/2 bg-gray-300 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
-        <iframe width="100%" height="100%" className="absolute inset-0" frameborder="0" title="map" marginheight="0" marginwidth="0" scrolling="no" src="https://uortjlczjmucmpaqqhqm.supabase.co/storage/v1/object/public/firejet-converted-images/images/5a1fdf8ca26d4b90c26465c9030340db15a2698e.webp"></iframe>
+        <iframe width="100%" height="100%" className="absolute inset-0" frameborder="0" title="map" marginheight="0" marginwidth="0" scrolling="no" src={Rectangle}></iframe>
         <div className="bg-white relative flex flex-wrap py-6 rounded shadow-md">
           <div className="lg:w-1/2 px-6">
             <h2 className="title-font font-semibold text-gray-900 tracking-widest text-xs">ADDRESS</h2>
@@ -40,7 +41,7 @@ const Contact = () => {
           <label for="message" className="leading-7 text-sm text-gray-600">Message</label>
           <textarea id="message" name="message" className="w-full bg-white rounded border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
         </div>
-        <button className="text-white bg-purple-500 border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded text-lg">Button</button>
+        <button className="text-white bg-green-600 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg">Button</button>
         <p className="text-xs text-gray-500 mt-3">The Polygon community blockchain beginner track</p>
       </div>
     </div>

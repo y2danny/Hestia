@@ -1,18 +1,17 @@
-// import logo from '../assets/logo.svg';
+import Logo from '../assets/logo.png';
 
 const Navigation = () => {
   return (
     <div>
       <nav
-    className="bg-white px-2 sm:px-4 py-2.5 dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
-    <div className="container flex flex-wrap items-center justify-between mx-auto">
-        <a href="/" className="flex items-center">
-            <img src="https://uortjlczjmucmpaqqhqm.supabase.co/storage/v1/object/public/firejet-converted-images/images/fd6e0b75128c35e7388456f74af7be292e7a2c7f.webp" className="h-6 mr-3 sm:h-9" alt="Flowbite Logo" />
-            <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Hestia</span>
-        </a>
+    className="bg-white px-2 sm:px-4 py-2.5 dark:bg-white fixed w-full z-20 top-0 left-0 border-b h-20">
+    <div className="container h-18 flex flex-wrap items-center justify-between mx-auto">
+        
+            <img src={Logo} className="h-10 w-40 ml-20 mr-3 sm:h-9" alt="Flowbite Logo" />   
+       
         <div className="flex md:order-2">
             <button type="button"
-                className="text-white bg-purple-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                className="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-blue-800">
                 Connect wallet</button>
             <button data-collapse-toggle="navbar-sticky" type="button"
                 className="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
@@ -28,23 +27,23 @@ const Navigation = () => {
         </div>
         <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
             <ul
-                className="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                className="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-white md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-white ">
                 <li>
                     <a href="/"
-                        className="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white"
+                        className="block py-2 pl-3 pr-4 text-white  rounded md:bg-transparent md:text-purple-700 md:p-0 dark:text-white"
                         aria-current="page">Home</a>
                 </li>
                 <li>
                     <a href="/"
-                        className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Place to stay</a>
+                        className="block py-2 pl-3 pr-4 text-purple-700 rounded hover:bg-purple-100 md:hover:bg-transparent md:hover:text-purple-700 md:p-0 md:dark:hover:text-purple dark:text-purple-400 dark:hover:bg-purple-700 dark:hover:text-purple-500 md:dark:hover:bg-transparent dark:border-gray-700">Place to stay</a>
                 </li>
                 <li>
                     <a href="/"
-                        className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Blog</a>
+                        className="block py-2 pl-3 pr-4 text-purple-700 rounded hover:bg-purple-100 md:hover:bg-transparent md:hover:text-purple-700 md:p-0 md:dark:hover:text-purple dark:text-purple-400 dark:hover:bg-purple-700 dark:hover:text-purple-500 md:dark:hover:bg-transparent dark:border-gray-700">Blog</a>
                 </li>
                 <li>
                     <a href="/community"
-                        className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Community</a>
+                        className="block py-2 pl-3 pr-4 text-purple-700 rounded hover:bg-purple-100 md:hover:bg-transparent md:hover:text-purple-700 md:p-0 md:dark:hover:text-purple dark:text-purple-400 dark:hover:bg-purple-700 dark:hover:text-purple md:dark:hover:bg-transparent dark:border-gray-700">Community</a>
                 </li>
             </ul>
         </div>
