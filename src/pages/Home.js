@@ -13,7 +13,15 @@ import Footer from "../components/Footer";
 
 // Components
 
-const Home = ({ web3Handler, account, home, provider, escrow, togglePop }) => {
+const Home = ({
+  web3Handler,
+  account,
+  home,
+  realestate,
+  provider,
+  escrow,
+  togglePop,
+}) => {
   return (
     <div>
       <div className="flex flex-col h-screen justify-between">
@@ -21,8 +29,8 @@ const Home = ({ web3Handler, account, home, provider, escrow, togglePop }) => {
           <Navigation web3Handler={web3Handler} account={account} />
         </header>
         <main className="mb-auto flex-grow py-4 bg-white">
-          <Jumbroton />
-          <Properties />
+          <Jumbroton escrow={escrow} realestate={realestate} />
+          <Properties escrow={escrow} realestate={realestate} />
           <Blog />
           <Contact />
         </main>

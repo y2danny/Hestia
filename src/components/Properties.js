@@ -3,10 +3,12 @@ import { useState, useEffect } from "react";
 import { ethers } from "ethers";
 
 const Properties = ({ realestate, escrow }) => {
+  console.log(realestate);
   const [items, setItems] = useState([]);
   const loadMarketplaceItems = async () => {
     // Load all unsold items
     const itemCount = await escrow.itemCount();
+
     let items = [];
     for (let i = 1; i <= itemCount; i++) {
       const item = await escrow.items(i);
@@ -97,7 +99,7 @@ const Properties = ({ realestate, escrow }) => {
         {items.length > 0 ? (
           <div className="grid lg:grid-cols-4 gap-6 xl:gap-x-12">
             {items.map((item, idx) => (
-              <Link to="/property">
+              <Link to="/property" >
                 <div className="mb-6 lg:mb-0" key={idx}>
                   <div className="relative block bg-white rounded-lg shadow-lg">
                     <div className="flex">

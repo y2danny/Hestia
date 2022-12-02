@@ -1,10 +1,11 @@
 import { ethers } from "ethers";
 import { useEffect, useState } from "react";
 import { Web3Storage } from "web3.storage";
+import Moralis from "moralis";
 
 // import close from '../assets/close.svg';
 import { create as ipfsHttpClient } from "ipfs-http-client";
-const client = ipfsHttpClient("https://ipfs.infura.io:5001/api/v0");
+// const client = ipfsHttpClient("https://ipfs.infura.io:5001/api/v0");
 
 const Mint = ({ realestate, escrow }) => {
   function hideDialog() {
@@ -34,72 +35,53 @@ const Mint = ({ realestate, escrow }) => {
     // const result = await client.add(fileInput);
     const pathResult = fileInput.files[0].name;
     setImage(`https://${cid}.ipfs.w3s.link/${pathResult}`);
-
+    // setImage(pathResult);
     console.log("Success");
   };
-  const createNFT = async () => {
-    const client = new Web3Storage({
-      token:
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDc4NTIyMDIwMjE3ZjhmYzZFMWNFQzc1NWY5NEUwMzJCOWExNTZlOUQiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2Njk5MTQ4NDQ3MjMsIm5hbWUiOiJIZXN0aWEifQ.xiv1jfX-h8kP6rPBc156e99PbKxBbfpEZHYlhsAw2zg",
-    });
-    console.log("dsd");
 
+  const createNFT = async () => {
     if (!image || !price || !name || !description) return;
+
     try {
-      //   console.log("sdsd");
-      console.log(JSON.stringify({ image, price, name, description }));
-      const cid = await client.put(
-        JSON.stringify({ image, price, name, description })
-      );
-      console.log(cid);
-      //   mintThenList(result);
+      await Moralis.start({
+        apiKey:
+          "D1hjxdBEjI838DrNrbdL9C3xvXTDHxMRm5TdtSoPunRm2RFjYmTrSyqkqJAByyFE",
+      });
+      const uploadArray = [
+        {
+          path: "nft.json",
+          content: {
+            name: name,
+            image: image,
+            price: price,
+            description: description,
+          },
+        },
+      ];
+      const response = await Moralis.EvmApi.ipfs.uploadFolder({
+        abi: uploadArray,
+      });
+      //   console.log(response.result[0].path);
+      const result = response.result[0].path;
+      mintThenList(result);
     } catch (error) {
       console.log("ipfs uri upload error: ", error);
     }
-    // const fileInput = document.getElementById("file-to-upload");
-    // const cid = await client.put(fileInput.files);
-    // // const result = await client.add(fileInput);
-    // const pathResult = fileInput.files[0].name;
-    // setImage(`https://${cid}.ipfs.w3s.link/${pathResult}`);
 
     console.log("Success");
   };
-  //   const uploadToIPFS = async (event) => {
-  //     event.preventDefault();
-  //     const file = event.target.files[0];
-  //     if (typeof file !== "undefined") {
-  //       try {
-  //         const result = await client.add(file);
-  //         console.log(result);
-  //         setImage(`https://ipfs.infura.io/ipfs/${result.path}`);
-  //       } catch (error) {
-  //         console.log("ipfs image upload error: ", error);
-  //       }
-  //     }
-  //   };
-  //   const reateNFT = async () => {
-  //     if (!image || !price || !name || !description) return;
-  //     try {
-  //       const result = await client.add(
-  //         JSON.stringify({ image, price, name, description })
-  //       );
-  //       mintThenList(result);
-  //     } catch (error) {
-  //       console.log("ipfs uri upload error: ", error);
-  //     }
-  //   };
-  //   const mintThenList = async (result) => {
-  //     const uri = `https://ipfs.infura.io/ipfs/${result.path}`;
-  //     // mint nft
-  //     await (await realestate.mint(uri)).wait();
-  //     // get tokenId of new nft
-  //     const id = await realestate.tokenCount();
-  //     // approve escrow to spend nft
-  //     await (await realestate.setApprovalForAll(escrow.address, true)).wait();
-  //     // add nft to escrow
-  //     const listingPrice = ethers.utils.parseEther(price.toString());
-  //     await (await escrow.makeItem(realestate.address, id, listingPrice)).wait();
-  //   };
+  const mintThenList = async (result) => {
+    const uri = result;
+    // mint nft
+    await (await realestate.mint(uri)).wait();
+    // get tokenId of new nft
+    const id = await realestate.tokenCount();
+    // approve escrow to spend nft
+    await (await realestate.setApprovalForAll(escrow.address, true)).wait();
+    // add nft to escrow
+    const listingPrice = ethers.utils.parseEther(price.toString());
+    await (await escrow.makeItem(realestate.address, id, listingPrice)).wait();
+  };
 
   return (
     <div className="relative w-full h-full max-w-md md:h-auto">
@@ -142,10 +124,7 @@ const Mint = ({ realestate, escrow }) => {
                 onChange={uploadFile}
               ></input>
 
-              <label
-                for="email"
-                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-              >
+              <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                 Title
               </label>
               <input
