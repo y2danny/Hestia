@@ -55,8 +55,8 @@ const Blog = () => {
           </p>
           <button className="text-white bg-green-600 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded">Read more</button>
           <div className="flex mt-8">
-            <button className="title-font font-medium text-2xl text-white  border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded"><img src={Arch}/></button>
-            <button className="flex mr-20 title-font font-medium text-2xl text-white  border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded"><img src={Bus}/></button>
+            <button className="title-font font-medium text-3xl text-white  border-0 py-2 px-6 focus:outline-none rounded"><img src={Arch} alt=""/></button>
+            <button className="flex mr-20 title-font font-medium text-2xl text-white  border-0 py-2 px-6 focus:outline-none  rounded"><img src={Bus} alt=""/></button>
           </div>
         </div>
       </div>

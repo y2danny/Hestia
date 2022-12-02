@@ -18,7 +18,7 @@ const Footer = () => {
                         <a href="/" className="hover:underline">Hestia</a>
                     </li>
                     <li>
-                        <a href="https://tailwindcss.com/" className="hover:underline">Tailwind CSS</a>
+                        <a href="https://tailwindcss.com/" className="hover:underline">Hestia Team</a>
                     </li>
                 </ul>
             </div>
