@@ -12,7 +12,7 @@ const Properties = () => {
     <section className="mb-32 text-gray-800 text-center">
         <section className="text-gray-600 body-font mb-4 pr-20">
             <div className="container px-5 py-24 mr-10 mx-auto flex items-center md:flex-row flex-col">
-                <div className="flex flex-col mr-10 md:flex-row md:ml-auto md:mr-0 mx-auto items-center flex-shrink-0 space-x-4 justify-start">
+                <div className="flex flex-row mr-10 md:flex-row md:ml-auto md:mr-0 mx-auto items-center flex-shrink-0 space-x-4 justify-start">
                     <button
                         className="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none">
                         <span className="ml-4 flex items-start flex-col leading-none">
@@ -64,7 +64,7 @@ const Properties = () => {
                             placerat vulputate.
                         </p>
                         <a href="/" data-mdb-ripple="true" data-mdb-ripple-color="light"
-                            className="inline-block px-6 py-2.5 bg-green-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Read
+                            className="inline-block px-6 py-2.5 bg-green-600 text-white font-medium text-xs leading-tight uppercase rounded-lg shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Read
                             more</a>
                     </div>
                 </div>
@@ -94,7 +94,7 @@ const Properties = () => {
                             placerat vulputate.
                         </p>
                         <a href="/" data-mdb-ripple="true" data-mdb-ripple-color="light"
-                            className="inline-block px-6 py-2.5 bg-green-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Read
+                            className="inline-block px-6 py-2.5 bg-green-600 text-white font-medium text-xs leading-tight uppercase rounded-lg shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Read
                             more</a>
                     </div>
                 </div>
@@ -125,7 +125,7 @@ const Properties = () => {
                             placerat vulputate.
                         </p>
                         <a href="/" data-mdb-ripple="true" data-mdb-ripple-color="light"
-                            className="inline-block px-6 py-2.5 bg-green-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Read
+                            className="inline-block px-6 py-2.5 bg-green-600 text-white font-medium text-xs leading-tight uppercase rounded-lg shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Read
                             more</a>
                     </div>
                 </div>
@@ -154,7 +154,7 @@ const Properties = () => {
                             placerat vulputate.
                         </p>
                         <a href="/" data-mdb-ripple="true" data-mdb-ripple-color="light"
-                            className="inline-block px-6 py-2.5 bg-green-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Read
+                            className="inline-block px-6 py-2.5 bg-green-600 text-white font-medium text-xs leading-tight uppercase rounded-lg shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Read
                             more</a>
                     </div>
                 </div>

@@ -4,6 +4,30 @@
     margin-top: 5rem;
     height: 558px;
     margin-left: 10rem;
+    background-size: contain; 
+   width: 1100px;
+}
+
+@media (max-width: 768px) { 
+    #bg{
+    background-size: contain;
+    width: 1000px;
+    
+    }
+    #mint{
+    width: 1000px;
+    }
+}
+
+@media (max-width: 368px) { 
+    #bg{
+    background-size: contain;
+    width: 800px;
+    margin-bottom: -10rem;
+    }
+    #mint{
+        width: 800px;
+        }
 }
 
 h3{

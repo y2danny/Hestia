@@ -29,16 +29,16 @@ const Jumbroton = () => {
           </div> 
           
           <section className="text-gray-600 body-font mt-10">
-            <div className="container bg-green-900 space-x-40 rounded-2xl ml-20 px-5 py-4 mx-auto flex items-center md:flex-row flex-col ">
-                <div className="flex flex-col ml-10 pl-20  md:pr-10 md:mb-0 mb-6 pr-0 w-full md:w-auto md:text-left text-center">
+            <div id='mint' className="container bg-green-900 space-x-40 h-40 rounded-2xl ml-20 px-5 py-4 mx-auto flex items-center md:flex-row flex-row w-100% pr-10 ">
+                <div className="flex flex-col ml-10 pl-20  md:pr-10 md:mb-0 mb-6  md:w-auto md:text-left text-center">
                     <h2 className="text-3xl text-white tracking-widest font-medium title-font mb-1">Have property to sell?</h2>
                     <h1 className="md:text-xl text-l font-medium title-font text-slate-300">Upload your property for free</h1>
                 </div>
-                <div className="flex md:ml-auto md:mr-0 mx-auto items-center flex-shrink-0 space-x-1">
+                <div className="flex md:ml-auto flex-row md:mr-0 mx-auto items-center flex-shrink-0 space-x-1">
                     <button
                         onClick={showDialog}
                         className="bg-green-600 text-white inline-flex py-3 px-5 rounded-lg items-center ml-20 hover:bg-gray-200 focus:outline-none">
-                        <span className="ml-4 flex items-start flex-col leading-none">
+                        <span className="ml-4 flex items-start flex-row leading-none">
                             <span className="title-font font-medium mr-8">Mint now</span>
                         </span>
                     </button>
