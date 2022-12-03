@@ -7,56 +7,142 @@
     background-size: contain; 
    width: 1100px;
 }
-
-
-@media (max-width: 968px) { 
-    #bg{
-    background-size: contain;
-    width: 300px;
-    margin-bottom: -10rem;
-    margin-left: 2rem;
-    padding-right: 1rem;
-    }
-    #mint{
-    width: 300px;
-    }
+#input{
+    background-color: transparent;
+    
 }
 
-@media (max-width: 868px) { 
+
+@media (max-width: 1068px) { 
+    #bg{
+        background-size: contain;
+        width: 680px;
+        background-size: contain;
+        margin-bottom: -10rem;
+        margin-left: 5%;
+        padding-right: -5rem;
+        }
+        #mint{
+        width: 680px;
+        margin-left: -1.59rem;
+        margin-top:-15rem;
+        }
+        #mint h2{
+           font-size: 1.5rem;
+           white-space:nowrap;
+           margin-right: -10rem;
+           margin-left: -3.5rem;
+        }
+        #mint h1{
+          margin-left: 2rem;
+          white-space: nowrap;
+        }
+        #bg h3{
+            margin-top: -3rem;
+           
+        }
+        #input{
+            margin-left: 8rem;
+        }
+        #inut{
+            width: 45rem;
+            margin-right: 10px;
+        }
+        #input button{
+            height: 3rem;
+        }
+   
+}
+
+@media (max-width: 788px) { 
     #bg{
     background-size: contain;
-    width: 310px;
+    width: 680px;
     background-size: contain;
     margin-bottom: -10rem;
-    margin-left: 1rem;
+    margin-left: 5%;
     padding-right: -5rem;
     }
     #mint{
-    width: 400px;
+    width: 680px;
+    margin-left: -3rem;
+    margin-top:-15rem;
+    }
+    #mint h2{
+       font-size: 1.5rem;
+       white-space:nowrap;
+       margin-right: -10rem;
+       margin-left: -3.5rem;
+    }
+    #mint h1{
+      margin-left: 2rem;
+      white-space: nowrap;
+    }
+    #bg h3{
+        margin-top: -3rem;
+       
+    }
+    #input{
+        margin-left: 8rem;
+    }
+    #inut{
+        width: 45rem;
+        margin-right: 10px;
+    }
+    #input button{
+        height: 3rem;
     }
 }
 
 @media (max-width: 588px) { 
     #bg{
-    background-size: contain;
-    width: 300px;
-    height: 400px;
-    margin-bottom: -10rem;
-    margin-left: 1rem;
-    padding-right: -5rem;
-    }
-    #mint{
-        width:300px;
+        background-size: contain;
+        width: 680px;
+        background-size: contain;
+        margin-bottom: -10rem;
+        margin-left: 5%;
+        padding-right: -5rem;
+        }
+        #mint{
+        width: 680px;
+        margin-left: -3.3rem;
+        margin-top:-15rem;
+        }
+        #mint h2{
+           font-size: 1.5rem;
+           white-space:nowrap;
+           margin-right: -10rem;
+           margin-left: -3.5rem;
+        }
+        #mint h1{
+          margin-left: 2rem;
+          white-space: nowrap;
+        }
+        #bg h3{
+            margin-top: -3rem;
+           
+        }
+        #input{
+            margin-left: 8rem;
+        }
+        #inut{
+            width: 45rem;
+            margin-right: 10px;
+        }
+        #input button{
+            height: 3rem;
         }
 }
+
+
 
 h3{
     margin-right: 10rem;
 }
 
-#input{
-    background-color: white;
+#inut{
     text-indent: 5px;
+    background-color: white;
 }
 
 section{

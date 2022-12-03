@@ -4,10 +4,10 @@ import Bus from '../assets/bus.png';
 
 const Blog = () => {
     return (
-<section className="text-gray-600 body-font overflow-hidden pl-10">
-    <div className="container mx-auto ml-10">
-      <div className="lg:w-full mx-auto flex flex-wrap ml-10">
-        <img alt="ecommerce" className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src={Group}/>
+<section  className="text-gray-600 body-font overflow-hidden pl-10">
+    <div id='sect-blog' className=" mx-auto ml-10">
+      <div className="mx-auto flex flex-wrap ml-10">
+        <img  alt="ecommerce" className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src={Group}/>
         <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
           <h2 className="text-sm title-font text-gray-500 tracking-widest">Hot</h2>
           <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">How to invest in Real Estate<br />using Hestia</h1>

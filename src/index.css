@@ -3,6 +3,46 @@
 @tailwind utilities;
 
 
-#sect{
-    margin-left: 10rem;
+
+
+
+
+@media (max-width: 788px) {
+    #nav{
+        width: 700px;
+    }
+    #sect-blog{
+        width: 600px;
+        margin-left: -5rem;
+    }
+    #sect{
+        width:600px;
+        margin-right: -3rem;
+        margin-left: 3rem;
+    }
+    #pt{
+        margin-left: 10rem;
+        margin-bottom: 30px;
+    }
+    #cont{
+        padding-right: 10rem;
+    }
+}
+
+@media (max-width: 588px) {
+    #nav{
+        width: 560px;
+    }
+    #btn_nav{
+        margin-left: 20px;
+        margin-right: -10rem;
+    }
+    #sect-blog{
+        width: 600px;
+        margin-left: -5rem;
+    }
+    #sect{
+        width:600px;
+    }
+    
 }

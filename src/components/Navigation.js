@@ -3,13 +3,13 @@ import Logo from '../assets/logo.png';
 const Navigation = () => {
   return (
     <div>
-      <nav
-    className="bg-white px-2 sm:px-4 py-2.5 dark:bg-white fixed w-full z-20 top-0 left-0 border-b h-20">
+      <nav id='nav'
+    className="bg-transparent px-2 sm:px-4 py-2.5 dark:bg-transparent fixed w-full z-20 top-0 left-0 border-b h-50">
     <div className="container h-18 flex flex-wrap items-center justify-between mx-auto">
         
             <img src={Logo} className="h-10 w-40 ml-20 mr-3 sm:h-9" alt="Flowbite Logo" />   
        
-        <div className="flex md:order-2">
+        <div id='btn_nav' className="flex md:order-2">
             <button type="button"
                 className="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-blue-800">
                 Connect wallet</button>
