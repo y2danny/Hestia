@@ -1,5 +1,7 @@
 # Hestia web3 application
 
+### - Description
+
 ### Hestia meaning hospitality and home was created from the imminent need for proper hospitality and gunuine living conditions.
 
 ## The Problem
@@ -16,13 +18,8 @@
 
 
 
-### - Hestia Tech Stack
-
-
-### - The use of the Hestia 
-
-
-### - Description
+### Hestia Tech Stack
+ 
 
 
 ### - Hestia UI Design
