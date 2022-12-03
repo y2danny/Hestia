@@ -59,7 +59,7 @@ function App() {
 
     setrealEstate(realestate);
     // const ss = await nft.name();
-    console.log(await escrow.feePercent());
+    // console.log(await escrow.feePercent());
     // console.log(await realestate.mint());
 
     // loadContracts(signer);
@@ -92,7 +92,7 @@ function App() {
           element={<Community escrow={escrow} realestate={realestate} />}
         ></Route>
         <Route
-          path="/property"
+          path="/property/:id"
           element={<Property escrow={escrow} realestate={realestate} />}
         ></Route>
         <Route path="*" component={<NotFoundPage />} />

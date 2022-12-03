@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { ethers } from "ethers";
+import { Button } from "web3uikit";
 
 const Properties = ({ realestate, escrow }) => {
-  console.log(realestate);
   const [items, setItems] = useState([]);
   const loadMarketplaceItems = async () => {
     // Load all unsold items
@@ -33,11 +33,14 @@ const Properties = ({ realestate, escrow }) => {
     }
     setItems(items);
   };
-
+  console.log(items);
   const buyMarketItem = async (item) => {
     await (
-      await escrow.purchaseItem(item.itemId, { value: item.totalPrice })
+      await escrow.purchaseItem(item.itemId, {
+        value: item.totalPrice,
+      })
     ).wait();
+
     loadMarketplaceItems();
   };
 
@@ -99,45 +102,91 @@ const Properties = ({ realestate, escrow }) => {
         {items.length > 0 ? (
           <div className="grid lg:grid-cols-4 gap-6 xl:gap-x-12">
             {items.map((item, idx) => (
-              <Link to="/property" >
-                <div className="mb-6 lg:mb-0" key={idx}>
-                  <div className="relative block bg-white rounded-lg shadow-lg">
-                    <div className="flex">
-                      <div
-                        className="relative overflow-hidden bg-no-repeat bg-cover shadow-lg rounded-lg mx-4 -mt-4"
-                        data-mdb-ripple="true"
-                        data-mdb-ripple-color="light"
-                      >
-                        <img src={item.image} className="w-full" alt="" />
-                        <a href="/">
-                          <div className="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 hover:opacity-100 transition duration-300 ease-in-out"></div>
-                        </a>
-                      </div>
-                    </div>
-                    <div className="p-6">
-                      <h5 className="font-bold text-lg mb-3">{item.name}</h5>
-                      <p className="text-gray-500 mb-4">
-                        {item.price} ETH
-                        {/* <small>
-                          Published <u>13.01.2022</u> by
-                          <a href="/" className="text-gray-900">
-                            Anna Maria Doe
-                          </a>
-                        </small> */}
-                      </p>
-                      <p className="mb-4 pb-2">{item.description}</p>
-                      {/* <a
-                        href="/"
-                        data-mdb-ripple="true"
-                        data-mdb-ripple-color="light"
-                        className="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
-                      >
-                        Read more
-                      </a> */}
+              // <Link to={`/property/${item.itemId}`} items={items}>
+              //   <div className="mb-6 lg:mb-0" key={idx}>
+              //     <div className="relative block bg-white rounded-lg shadow-lg">
+              //       <div className="flex">
+              //         <div
+              //           className="relative overflow-hidden bg-no-repeat bg-cover shadow-lg rounded-lg mx-4 -mt-4"
+              //           data-mdb-ripple="true"
+              //           data-mdb-ripple-color="light"
+              //         >
+              //           <img src={item.image} className="w-full" alt="" />
+              //           <a href="/">
+              //             <div className="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 hover:opacity-100 transition duration-300 ease-in-out"></div>
+              //           </a>
+              //         </div>
+              //       </div>
+              //       <div className="p-6">
+              //         <h5 className="font-bold text-lg mb-3">{item.name}</h5>
+              //         <p className="text-gray-500 mb-4">
+              //           {ethers.utils.formatEther(item.totalPrice)}ETH
+              //           <small>
+              //             Published <u>13.01.2022</u> by
+              //             <a href="/" className="text-gray-900">
+              //               Anna Maria Doe
+              //             </a>
+              //           </small>
+              //         </p>
+              //         <p className="mb-4 pb-2">{item.description}</p>
+              //         <Button />
+              //         <a
+              //           href="/"
+              //           data-mdb-ripple="true"
+              //           data-mdb-ripple-color="light"
+              //           className="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+              //         >
+              //           Read more
+              //         </a>
+              //       </div>
+              //     </div>
+              //   </div>
+              // </Link>
+              <div className="mb-6 lg:mb-0" key={idx}>
+                <div className="relative block bg-white rounded-lg shadow-lg">
+                  <div className="flex">
+                    <div
+                      className="relative overflow-hidden bg-no-repeat bg-cover shadow-lg rounded-lg mx-4 -mt-4"
+                      data-mdb-ripple="true"
+                      data-mdb-ripple-color="light"
+                    >
+                      <img src={item.image} className="w-full" alt="" />
+                      <a href="/">
+                        <div className="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 hover:opacity-100 transition duration-300 ease-in-out"></div>
+                      </a>
                     </div>
                   </div>
+                  <div className="p-6">
+                    <h5 className="font-bold text-lg mb-3">{item.name}</h5>
+                    <p className="text-gray-500 mb-4">
+                      {ethers.utils.formatEther(item.totalPrice)}ETH
+                      {/* <small>
+                      Published <u>13.01.2022</u> by
+                      <a href="/" className="text-gray-900">
+                        Anna Maria Doe
+                      </a>
+                    </small> */}
+                    </p>
+                    <p className="mb-4 pb-2">{item.description}</p>
+                    <button
+                      onClick={() => {
+                        buyMarketItem(item);
+                      }}
+                      className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    >
+                      Buy
+                    </button>{" "}
+                    {/* <a
+                    href="/"
+                    data-mdb-ripple="true"
+                    data-mdb-ripple-color="light"
+                    className="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+                  >
+                    Read more
+                  </a> */}
+                  </div>
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
         ) : (

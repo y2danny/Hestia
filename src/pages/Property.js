@@ -2,12 +2,20 @@
 // import { useEffect, useState } from 'react';
 
 // import close from '../assets/close.svg';
+import { useParams } from "react-router-dom";
 
 // Components
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 
-const Home = ({ home, provider, escrow, togglePop }) => {
+const Home = ({ home, provider, escrow, togglePop, items }) => {
+  let { id } = useParams();
+  console.log({ id });
+  // console.log(items);
+
+  // console.log("params");
+
+  // console.log(params);
   return (
     <div>
       <Navigation />

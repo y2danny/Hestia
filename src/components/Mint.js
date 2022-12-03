@@ -80,7 +80,9 @@ const Mint = ({ realestate, escrow }) => {
     await (await realestate.setApprovalForAll(escrow.address, true)).wait();
     // add nft to escrow
     const listingPrice = ethers.utils.parseEther(price.toString());
+    console.log(listingPrice);
     await (await escrow.makeItem(realestate.address, id, listingPrice)).wait();
+    window.location.reload();
   };
 
   return (
