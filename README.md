@@ -16,25 +16,25 @@
 
 
 
-- Hestia Tech Stack
+### - Hestia Tech Stack
 
 
-- The use of the Hestia 
+### - The use of the Hestia 
 
 
-- Description
+### - Description
 
 
-- Hestia UI Design
+### - Hestia UI Design
  https://www.figma.com/file/Qini0TnnJ9s03I9RhzZJQU/Hestia?node-id=0%3A1&t=RYiFjUetCqXCm5yY-1
 
 
 ## Requirements For Initial Setup
-- Install [NodeJS](https://nodejs.org/en/)
+### - Install [NodeJS](https://nodejs.org/en/)
 
 ## Setting Up
 
--  Clone
+### -  Clone
 
 ### Install Dependencies:
 - `$ npm install`
@@ -50,12 +50,12 @@
     In a separate terminal execute:
 - `$ npx hardhat run ./scripts/deploy.js --network localhost`
 
-### Start frontend
+## Start frontend
 
-- `$ npm run start`
+### - `$ npm run start`
 
 
-<!-- npm install -D tailwindcss postcss autoprefixer
+<!-- npm install -D tailwindcss postcss autoprefixe
 
 npx tailwindcss init -p
 
