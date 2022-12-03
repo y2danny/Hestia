@@ -12,6 +12,33 @@
     
 }
 
+#mint{
+    width: 98%;
+    }
+
+#mint h2{
+    font-size: 2rem;
+    white-space:nowrap;
+    margin-left: 2rem;
+ }
+ #mint h1{
+   margin-right: 8rem;
+   white-space: nowrap;
+ }
+#mint button{
+    margin-left: 17rem;
+}
+#bg h3{
+    font-size: 3rem;
+}
+
+#bg span{
+    font-size: 1.5rem;
+}
+#inut{
+    margin-left: 8rem;
+}
+
 
 @media (max-width: 1068px) { 
     #bg{

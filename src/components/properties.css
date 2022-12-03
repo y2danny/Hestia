@@ -1,8 +1,16 @@
-@media (max-width: 788px){
+#box{
+  margin-left: 5rem;;
+  width: 230px;
+}
+
 #prop{
   margin-right: 10rem;
-  padding-right: 30rem;
+  padding-right: 50rem;
+  margin-top: 2rem;
 }
+
+@media (max-width: 788px){
+
 #box{
   width: 300px;
   margin-bottom: 7rem;

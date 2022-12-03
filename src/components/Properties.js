@@ -40,7 +40,7 @@ const Properties = () => {
             </div>
           </section>    
 
-        <div id='proty' className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 ">
+        <div id='proty' className="grid xl:grid-cols-4 lg:grid-cols-2  md:grid-cols-2 sm:grid-cols-2 ">
         <Link to="/property"> 
             <div className="mb-6  lg:mb-0">
                 <div id='box' className="relative block bg-white mr-10 rounded-lg shadow-lg">
