@@ -8,31 +8,52 @@
    width: 1100px;
 }
 
-@media (max-width: 768px) { 
+
+@media (max-width: 968px) { 
     #bg{
     background-size: contain;
-    width: 1000px;
-    
+    width: 300px;
+    margin-bottom: -10rem;
+    margin-left: 2rem;
+    padding-right: 1rem;
     }
     #mint{
-    width: 1000px;
+    width: 300px;
     }
 }
 
-@media (max-width: 368px) { 
+@media (max-width: 868px) { 
     #bg{
     background-size: contain;
-    width: 800px;
+    width: 310px;
+    background-size: contain;
     margin-bottom: -10rem;
+    margin-left: 1rem;
+    padding-right: -5rem;
     }
     #mint{
-        width: 800px;
+    width: 400px;
+    }
+}
+
+@media (max-width: 588px) { 
+    #bg{
+    background-size: contain;
+    width: 300px;
+    height: 400px;
+    margin-bottom: -10rem;
+    margin-left: 1rem;
+    padding-right: -5rem;
+    }
+    #mint{
+        width:300px;
         }
 }
 
 h3{
     margin-right: 10rem;
 }
+
 #input{
     background-color: white;
     text-indent: 5px;

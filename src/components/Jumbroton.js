@@ -12,7 +12,7 @@ const Jumbroton = () => {
     return (
       <div>
           <div className="text-center text-gray-800 py-24 px-6 mt-8" id='bg'>
-              <h3 className="text-3xl text-white  md:text-2xl xl:text-5xl font-bold tracking-tight mb-12">A Home Away From Home<br /><span
+              <h3 className="text-3xl text-white sm:text-2l md:text-2xl xl:text-5xl font-bold tracking-tight mb-12">A Home Away From Home<br /><span
                       className="text-green-600	text-3xl md:text-1xl xl:text-3xl">Buy, Rent and Sell Properties</span></h3>
               <div className="mb-6 md:mb-0">
                   <div className="flex flex-col mr-40 ml--30 md:flex-row justify-center">
