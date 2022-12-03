@@ -1,4 +1,4 @@
-# Hestia web3 application
+# hotel: Hestia web3 application
 
 ### - Description
 
