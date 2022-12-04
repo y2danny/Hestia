@@ -6,8 +6,10 @@
 
 
 @media (max-width: 988px) { 
+   
     #nav{
         width: 30%;
+        overflow-x: hidden;
     }
     #nav img{
         width: fit-content;
@@ -66,6 +68,7 @@
 @media (max-width: 588px) {
     #nav{
         width: 30%;
+        overflow-x: hidden;
     }
     #nav img{
         width: fit-content;
@@ -117,51 +120,77 @@
     }
 }
 
-@media (max-width: 388px) {
+@media (max-width: 368px) {
     #nav{
-        width: 30%;
+        width: 1;
+        overflow: hidden;
+        
     }
     #nav img{
         width: fit-content;
-        margin-left: 2rem;
+        margin-left: 0rem;
         margin-right: 1rem;
     }
     #btn_nav{
-        margin-left: 1rem;
+        margin-left: 2rem;
         margin-right: 1rem;
        
     }
 
     #btn_nav button{
-        width: 90%;
-        font-size: 8px;
+        width: 50%;
+        height: 27px ;
+        font-size: 6px;
+        font-weight: 700;
         white-space: nowrap;
+        align-items: center;
     }
     #sect-blog{
-        width: 30%;
+        width: 45%;
         padding-left: -16rem;
-        margin-right: 4rem;
+        margin-right: 5rem;
         background:contain;
     }
+    #sect-blog h1{
+        font-size: 1.6rem;
+    }
+   
     #sect{
-        width:80%;
+        width:88%;
         white-space: nowrap;
         font-size: 8px;
+        margin-left: 10px;
     }
     #show {
       display: none;
     }
+    #sect h2{
+        font-size: 1.3rem;
+    }
+
     #pt{
-        width: 150px;
+     
         margin-left: 2rem;
-        margin-top: -6rem;
+        margin-top: -9rem;
         display:flex;
         flex-direction: column;
     }
-
+    #pt h2{
+       font-size: 1rem;
+    }
+    #pt h1{
+       font-size:1rem;
+    }
+  #pt input{
+    width: 80%;
+    height: 30px ;
+  }
+  #pt button{
+    width: fit-content;
+  }
     #pp{
         font-size: 7px;
-        margin-left: 5px;
+        margin-left: -5px;
     }
     #arch{
         display: none;

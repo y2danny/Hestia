@@ -11,7 +11,7 @@ const Navigation = () => {
        
         <div id='btn_nav' className="flex md:order-2">
             <button type="button"
-                className="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-blue-800">
+                className="text-white bg-purple-700 hover:bg-purple-800  focus:outline-none focus:ring-white font-medium rounded-lg text-sm px-3 pr-10 text-center mr-3 md:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-blue-800">
                 Connect wallet</button>
             <button data-collapse-toggle="navbar-sticky" type="button"
                 className="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"

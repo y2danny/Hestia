@@ -16,15 +16,15 @@ const Properties = () => {
                 <div className="flex flex-row md:flex-row  mx-auto items-center flex-shrink-0 space-x-4 justify-start">
                     <button
                         className="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none">
-                        <span className="ml-4 flex items-start flex-col leading-none">
-                            <span className="title-font font-medium sm:pr-10">New</span>
+                        <span className="flex items-start flex-col leading-none">
+                            <span className="title-font font-medium ">New</span>
                         </span>
                     </button>
 
 
                     <button
                         className="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none">
-                        <span className="ml-4 flex items-start flex-col leading-none">
+                        <span className=" flex items-start flex-col leading-none">
                             <span className="title-font font-medium">Auction</span>
                         </span>
                     </button>
@@ -32,7 +32,7 @@ const Properties = () => {
 
                     <button
                         className="bg-gray-100 mr-10 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none">
-                        <span className="ml-4 flex items-start flex-col leading-none">
+                        <span className=" flex items-start flex-col leading-none">
                             <span className="title-font font-medium">NFTs</span>
                         </span>
                     </button>

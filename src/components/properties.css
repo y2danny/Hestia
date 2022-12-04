@@ -75,22 +75,25 @@
 
   @media (max-width: 388px){
     #prop{
-      margin-left: -12rem;
+      margin-left: -17rem;
       padding-right: 30rem;
       font-size: 10px;
+      margin-right: 5px;
     }
     #prop button{
-      width: 5rem;
+      width: 4rem;
+      padding-left: -2rem;
       white-space: nowrap;
+      margin-right: 0;
     }
 
     #prop button span{
        margin-right: 2rem;
     }
     #box{
-      width: 38%;
+      width: 30%;
       margin-bottom: 7rem;
-      margin-right: -10rem;
+      margin-right: -15rem;
     
     }
     #bx{
@@ -100,7 +103,7 @@
       width: 100%;
     }
     #proty{
-      margin-right: 30rem;
-      margin-left: -6rem;
+      margin-right: 32rem;
+      margin-left: -8rem;
     }
     }
