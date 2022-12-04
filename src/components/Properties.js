@@ -2,14 +2,15 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { ethers } from "ethers";
 import { Button } from "web3uikit";
-
+// import kil from "../images/house1";
 const Properties = ({ realestate, escrow }) => {
   const [items, setItems] = useState([]);
   const loadMarketplaceItems = async () => {
     // Load all unsold items
     const itemCount = await escrow.itemCount();
-
+    // const image1 = "./";
     let items = [];
+    console.log(items);
     for (let i = 1; i <= itemCount; i++) {
       const item = await escrow.items(i);
       if (!item.sold) {
