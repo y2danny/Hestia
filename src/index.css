@@ -8,8 +8,8 @@
 @media (max-width: 988px) { 
    
     #nav{
-        width: 30%;
-        overflow-x: hidden;
+        width: 80%;
+       white-space: nowrap;
     }
     #nav img{
         width: fit-content;
@@ -32,12 +32,12 @@
         margin-top: -10rem;
     }
     #sect-blog{
-        width: 60%;
+        width: 80%;
         padding-right: 16rem;
         background:contain;
     }
     #sect{
-        width:60%;
+        width:70%;
         white-space: nowrap;
         font-size: 8px;
         margin-left: 40px
@@ -48,7 +48,7 @@
     #pt{
         width: 100%;
         margin-left: 2rem;
-        margin-top: -6rem;
+        margin-top: -4rem;
         display:flex;
         flex-direction: column;
     }
