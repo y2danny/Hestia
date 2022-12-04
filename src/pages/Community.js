@@ -1,10 +1,3 @@
-// import Vector from "assets/Vector";
-// import Instagram216721958 from "assets/Instagram216721958";
-// import Twitter241721979 from "assets/Twitter241721979";
-// import RiCopyrightLine from "assets/RiCopyrightLine";
-// import Ellipse10 from "assets/Ellipse10";
-// import Ellipse11 from "assets/Ellipse11";
-// import RiCopyrightLine1 from "assets/RiCopyrightLine1";
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 
@@ -13,340 +6,209 @@ function Community() {
 
     return (
     <div>
-    <div
-      className={`relative bg-white text-left w-[1280px] h-[3158px] overflow-clip font-['Red_Rose']`}
-    >
-      <Navigation />
-      <div>
-        <div
-          className="[box-shadow:0px_0px_0px_1px_rgba(76,_206,_48,_1)_inset] [box-shadow-width:1px] absolute w-[1156px] h-[487px] left-[70px] top-[293px] bg-[rgba(69,255,29,0.05)] rounded-[20px]"
-         />
-      </div>
-      <div className="font-normal text-[rgba(21,80,9,1)]">
-        <p
-          className="absolute m-0 left-[74px] top-[212px] text-[40px] leading-[normal]"
-        >
-          Join our Community
-        </p>
-      </div>
-      <div>
-        <div
-          className="absolute w-[91px] h-[25px] left-[121px] top-[322px] bg-[rgba(21,80,9,1)] rounded-[10px]"
-         />
-      </div>
-      <div className="text-white font-normal">
-        <p
-          className="absolute m-0 left-[158px] top-[328px] text-[10px] leading-[normal]"
-        >
-          Twitter
-        </p>
-      </div>
-      <div className="font-normal text-[rgba(21,80,9,1)]">
-        <p
-          className="absolute m-0 left-[264px] top-[328px] text-[10px] leading-[normal]"
-        >
-          Facebook
-        </p>
-      </div>
-      <div className="font-normal text-[rgba(21,80,9,1)]">
-        <p
-          className="absolute m-0 left-[376px] top-[328px] text-[10px] leading-[normal]"
-        >
-          Discord
-        </p>
-      </div>
-      <div className="font-normal text-[rgba(21,80,9,1)]">
-        <p
-          className="absolute m-0 left-[74px] top-[901px] text-[40px] leading-[normal]"
-        >
-          Meet Our Developers
-        </p>
-      </div>
-      <div className="font-normal text-[rgba(21,80,9,1)]">
-        <p
-          className="absolute text-5xl m-0 left-[679px] top-[1146px] leading-[normal]"
-        >
-          Micheal Jackson
-        </p>
-      </div>
-      <div>
-        <div
-          className="[box-shadow:0px_0px_0px_1px_rgba(76,_206,_48,_1)_inset] [box-shadow-width:1px] [background:url(https://uortjlczjmucmpaqqhqm.supabase.co/storage/v1/object/public/firejet-converted-images/images/349d7e630d121c9a80ca2832701dfb761609a764.webp)_center_/_cover,linear-gradient(0deg,_rgba(217,_217,_217,_1),_rgba(217,_217,_217,_1))] absolute w-[482px] h-[586px] left-[117px] top-[1014px] rounded-[10px]"
-         />
-      </div>
-      <div>
-        <div
-          className="[box-shadow:0px_0px_0px_1px_rgba(76,_206,_48,_1)_inset] [box-shadow-width:1px] [background:url(https://uortjlczjmucmpaqqhqm.supabase.co/storage/v1/object/public/firejet-converted-images/images/a18b2f8e4c0810ae2c5055c3ba63ae6c6bb994d1.webp)_center_/_cover,linear-gradient(0deg,_rgba(217,_217,_217,_1),_rgba(217,_217,_217,_1))] absolute w-[482px] h-[502px] left-[667px] top-[1693px] rounded-[10px]"
-         />
-      </div>
-      <div>
-        <div
-          className="[box-shadow:0px_0px_0px_1px_rgba(76,_206,_48,_1)_inset] [box-shadow-width:1px] [background:url(https://uortjlczjmucmpaqqhqm.supabase.co/storage/v1/object/public/firejet-converted-images/images/a132e9f0e2fc571bb2c587c934eb2ae0508c1fba.webp)_center_/_cover,linear-gradient(0deg,_rgba(217,_217,_217,_1),_rgba(217,_217,_217,_1))] absolute w-[482px] h-[502px] left-[125px] top-[2261px] rounded-[10px]"
-         />
-      </div>
-      <div className="font-normal text-[rgba(21,80,9,1)]">
-        <p
-          className="opacity-70 absolute text-2xl m-0 w-[549px] left-[681px] top-[1208px] leading-[normal]"
-        >
-          He is a seasoned developer with 8years experience in frontend development using React and some experience in Solidairty.
-        </p>
-      </div>
-      <div className="font-normal text-[rgba(76,206,48,1)]">
-        <p
-          className="absolute text-2xl m-0 left-[681px] top-[1114px] leading-[normal]"
-        >
-          Frontend Developer
-        </p>
-      </div>
-      <div className="font-normal text-[rgba(21,80,9,1)]">
-        <p
-          className="absolute text-5xl m-0 left-[139px] top-[1809px] leading-[normal]"
-        >
-          Micheal Jackson
-        </p>
-      </div>
-      <div className="font-normal text-[rgba(21,80,9,1)]">
-        <p
-          className="opacity-70 absolute text-2xl m-0 w-[549px] left-[141px] top-[1871px] leading-[normal]"
-        >
-          He is a seasoned developer with 8years experience in frontend development using React and some experience in Solidairty.
-        </p>
-      </div>
-      <div className="font-normal text-[rgba(76,206,48,1)]">
-        <p
-          className="absolute text-2xl m-0 left-[141px] top-[1777px] leading-[normal]"
-        >
-          Frontend Developer
-        </p>
-      </div>
-      <div className="font-normal text-[rgba(21,80,9,1)]">
-        <p
-          className="absolute text-5xl m-0 left-[671px] top-[2384px] leading-[normal]"
-        >
-          Micheal Jackson
-        </p>
-      </div>
-      <div className="font-normal text-[rgba(21,80,9,1)]">
-        <p
-          className="opacity-70 absolute text-2xl m-0 w-[549px] left-[673px] top-[2446px] leading-[normal]"
-        >
-          He is a seasoned developer with 8years experience in frontend development using React and some experience in Solidairty.
-        </p>
-      </div>
-      <div className="font-normal text-[rgba(76,206,48,1)]">
-        <p
-          className="absolute text-2xl m-0 left-[673px] top-[2352px] leading-[normal]"
-        >
-          Frontend Developer
-        </p>
-      </div>
-      <Footer />
-      <div>
-        <div
-          className="[box-shadow:0px_0px_0px_1px_rgba(76,_206,_48,_1)_inset] [box-shadow-width:1px] absolute w-[1351.1163330078125px] h-[333.0223083496094px] left-[-57px] top-[2864.31px] bg-[rgba(69,255,29,0.05)] rounded-[20px]"
-         />
-      </div>
-      <div>
-        <div
-          className="[background:url(https://uortjlczjmucmpaqqhqm.supabase.co/storage/v1/object/public/firejet-converted-images/images/fd6e0b75128c35e7388456f74af7be292e7a2c7f.webp)_center_/_cover] w-28 absolute h-[83px] left-[176.55px] top-[2904.2px]"
-         />
-      </div>
-      {/* <Vector />
-      <Instagram216721958 />
-      <Twitter241721979 /> */}
-      {/* <div className="font-normal text-[rgba(247,247,247,1)]">
-        <p
-          className="absolute text-lg leading-4 m-0 h-[18.47px] w-[121.67px] left-[15.3%] right-[75.19%] top-[75.75%] bottom-[23.67%]"
-        >
-          2022 Hestia
-        </p>
-      </div> */}
-      {/* <RiCopyrightLine /> */}
-      <div className="text-[rgba(21,80,9,1)]">
-        <div
-          className="absolute flex justify-center items-center w-[753px] h-[205px] left-[491.55px] top-[2904.2px] gap-[217px]"
-        >
-          <div className="relative w-[101px] h-[169px]">
-            <p
-              className="inset-x-0 top-0 absolute text-lg font-bold inline m-0 bottom-[86.98%] leading-[normal]"
-            >
-              Community
-            </p>
-            <div
-              className="absolute left-0 bottom-0 font-normal w-[82px] right-[18.81%] top-[26.63%]"
-            >
-              <p
-                className="left-0 top-0 absolute text-sm inline m-0 h-[19px] w-[38px] right-[53.66%] bottom-[84.68%] leading-[35px]"
-              >
-                NFT
-              </p>
-              <p
-                className="left-0 absolute text-sm inline m-0 h-[19px] w-[55px] right-[32.93%] top-[28.23%] bottom-[56.45%] leading-[35px]"
-              >
-                Tokens
-              </p>
-              <p
-                className="left-0 absolute text-sm inline m-0 h-[19px] w-[70px] right-[14.63%] top-[56.45%] bottom-[28.23%] leading-[35px]"
-              >
-                Landlords
-              </p>
-              <p
-                className="inset-x-0 bottom-0 absolute text-sm inline m-0 h-[19px] w-[82px] top-[84.68%] leading-[35px]"
-              >
-                Discord
-              </p>
-            </div>
-          </div>
-          {/* <div className="relative w-[84px] h-[164px]">
-            <p
-              className="left-0 top-0 absolute text-lg font-bold inline m-0 right-[29.76%] bottom-[86.59%] leading-[normal]"
-            >
-              Places
-            </p>
-            <div
-              className="inset-x-0 absolute bottom-0 font-normal w-[84px] top-[27.44%]"
-            >
-              <p
-                className="left-0 top-0 absolute text-sm inline m-0 h-[19px] w-[76px] right-[9.52%] bottom-[84.03%] leading-[35px]"
-              >
-                Castle
-              </p>
-              <p
-                className="left-0 absolute text-sm inline m-0 h-[19px] w-[62px] right-[26.19%] top-[26.89%] bottom-[57.14%] leading-[35px]"
-              >
-                {"Farms "}
-              </p>
-              <p
-                className="w-12 left-0 absolute text-sm inline m-0 h-[19px] right-[42.86%] top-[53.78%] bottom-[30.25%] leading-[35px]"
-              >
-                Beach
-              </p>
-              <p
-                className="inset-x-0 bottom-0 absolute text-sm inline m-0 h-[19px] w-[84px] top-[84.03%] leading-[35px]"
-              >
-                Learn more
-              </p>
-            </div>
-          </div> */}
-          <div className="relative w-[79px] h-[164px]">
-            <p
-              className="inset-x-0 top-0 absolute text-lg font-bold inline m-0 bottom-[86.59%] leading-[normal]"
-            >
-              About us
-            </p>
-            <div
-              className="absolute left-0 bottom-0 font-normal w-[76px] right-[3.8%] top-[27.44%]"
-            >
-              <p
-                className="inset-x-0 top-0 absolute text-sm inline m-0 h-[19px] w-[76px] bottom-[84.03%] leading-[35px]"
-              >
-                Road map
-              </p>
-              <p
-                className="left-0 absolute text-sm inline m-0 h-[19px] w-[62px] right-[18.42%] top-[26.89%] bottom-[57.14%] leading-[35px]"
-              >
-                {"Creators "}
-              </p>
-              <p
-                className="w-12 left-0 absolute text-sm inline m-0 h-[19px] right-[36.84%] top-[53.78%] bottom-[30.25%] leading-[35px]"
-              >
-                Career
-              </p>
-              <p
-                className="inset-x-0 bottom-0 absolute text-sm inline m-0 h-[19px] w-[76px] top-[84.03%] leading-[35px]"
-              >
-                Contact us
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div
-          className="[box-shadow:0px_0px_0px_1px_rgba(76,_206,_48,_1)_inset] [box-shadow-width:1px] absolute bg-white w-[1027px] h-[123px] left-[142px] top-[391px] rounded-[20px]"
-         />
-      </div>
-      <div className="font-normal text-[rgba(76,206,48,1)]">
-        <p
-          className="absolute text-base m-0 left-[381px] top-[413px] leading-[normal]"
-        >
-          @Alikazal
-        </p>
-      </div>
-      <div>
-        <div
-          className="[box-shadow:0px_0px_0px_1px_rgba(76,_206,_48,_1)_inset] [box-shadow-width:1px] absolute bg-white w-[1027px] h-[123px] left-[142px] top-[527px] rounded-[20px]"
-         />
-      </div>
-      {/* <Ellipse10 />
-      <Ellipse11 /> */}
-      <div className="font-normal text-[rgba(21,80,9,1)]">
-        <p
-          className="absolute m-0 left-[641px] top-[703px] text-[10px] leading-[normal]"
-        >
-          Read more
-        </p>
-      </div>
-      <div className="font-normal text-[rgba(21,80,9,1)]">
-        <p
-          className="absolute text-base m-0 left-[290px] top-[412px] leading-[normal]"
-        >
-          {"Ali Kazeem "}
-        </p>
-      </div>
-      <div className="font-light text-[rgba(21,80,9,1)]">
-        <p
-          className="absolute m-0 w-[626px] left-[290px] top-[434px] text-[13px] leading-[normal]"
-        >
-          Investing with Hestia has changed my life. Imagine having your properties secured as NFT, with such a blissful experience
-        </p>
-      </div>
-      {/* <div className="font-normal text-[rgba(21,80,9,1)]">
-        <p
-          className="absolute text-lg leading-4 m-0 h-[23.59px] w-[121.67px] left-[16.2%] right-[74.3%] top-[96.72%] bottom-[2.53%]"
-        >
-          2022 Hestia
-        </p>
-      </div> */}
-      {/* <RiCopyrightLine1 /> */}
-      <div className="font-normal text-[rgba(76,206,48,1)]">
-        <p
-          className="absolute text-base m-0 left-[381px] top-[553px] leading-[normal]"
-        >
-          @Alikazal
-        </p>
-      </div>
-      <div className="font-normal text-[rgba(21,80,9,1)]">
-        <p
-          className="absolute text-base m-0 left-[290px] top-[552px] leading-[normal]"
-        >
-          {"Ali Kazeem "}
-        </p>
-      </div>
-      <div className="font-light text-[rgba(21,80,9,1)]">
-        <p
-          className="absolute m-0 w-[626px] left-[290px] top-[574px] text-[13px] leading-[normal]"
-        >
-          Investing with Hestia has changed my life. Imagine having your properties secured as NFT, with such a blissful experience
-        </p>
-      </div>
-      <div>
-        <div
-          className="[background:url(https://uortjlczjmucmpaqqhqm.supabase.co/storage/v1/object/public/firejet-converted-images/images/c30cafb62ac545c354d773587d886165a68cb3ba.webp)_no-repeat_center_/_contain] opacity-40 w-6 absolute h-[13px] left-[295px] top-[620px]"
-         />
-      </div>
-      <div>
-        <div
-          className="[background:url(https://uortjlczjmucmpaqqhqm.supabase.co/storage/v1/object/public/firejet-converted-images/images/da7d0680fc1c72071b6e1a46c414e70f2adea7bb.webp)_no-repeat_center_/_contain] opacity-40 absolute w-[18px] h-[13px] left-[344px] top-[620px]"
-         />
-      </div>
-      <div>
-        <div
-          className="[background:url(https://uortjlczjmucmpaqqhqm.supabase.co/storage/v1/object/public/firejet-converted-images/images/245e1dd10cbb910d6cd62a71262548112b39183a.webp)_no-repeat_center_/_contain] opacity-40 absolute w-[15px] h-[18px] left-[323px] top-[618px]"
-         />
-      </div>
+    <Navigation />
+    <h2 className="text-xl font-bold pb-4 text-left pl-20 mt-20">Join our community </h2>
+
+    <section className="p-6 md:p-12 text-center md:text-left rounded-md shadow-lg bg-green-500">
+    <div className="flex flex-wrap mb-2">
+        <button type="button" data-mdb-ripple="true" data-mdb-ripple-color="light" className="mx-2 px-6 py-2.5 mb-2 bg-green-400 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-3.5 h-3.5 mr-2">
+          <path fillRule="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/>
+        </svg>
+        Twitter
+      </button>
+
+      <button type="button" data-mdb-ripple="true" data-mdb-ripple-color="light" className="mx-2 px-6 py-2.5 mb-2 bg-green-400 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out flex items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" className="w-4 h-4 mr-1.5">
+      <path fillRule="currentColor" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path>
+    </svg>
+              Facebook
+      </button>
+
+      <button type="button" data-mdb-ripple="true" data-mdb-ripple-color="light" className="px-6 py-2.5 mb-2 bg-green-400 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out flex items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" className="w-4 h-4">
+      <path fillRule="currentColor" d="M524.531,69.836a1.5,1.5,0,0,0-.764-.7A485.065,485.065,0,0,0,404.081,32.03a1.816,1.816,0,0,0-1.923.91,337.461,337.461,0,0,0-14.9,30.6,447.848,447.848,0,0,0-134.426,0,309.541,309.541,0,0,0-15.135-30.6,1.89,1.89,0,0,0-1.924-.91A483.689,483.689,0,0,0,116.085,69.137a1.712,1.712,0,0,0-.788.676C39.068,183.651,18.186,294.69,28.43,404.354a2.016,2.016,0,0,0,.765,1.375A487.666,487.666,0,0,0,176.02,479.918a1.9,1.9,0,0,0,2.063-.676A348.2,348.2,0,0,0,208.12,430.4a1.86,1.86,0,0,0-1.019-2.588,321.173,321.173,0,0,1-45.868-21.853,1.885,1.885,0,0,1-.185-3.126c3.082-2.309,6.166-4.711,9.109-7.137a1.819,1.819,0,0,1,1.9-.256c96.229,43.917,200.41,43.917,295.5,0a1.812,1.812,0,0,1,1.924.233c2.944,2.426,6.027,4.851,9.132,7.16a1.884,1.884,0,0,1-.162,3.126,301.407,301.407,0,0,1-45.89,21.83,1.875,1.875,0,0,0-1,2.611,391.055,391.055,0,0,0,30.014,48.815,1.864,1.864,0,0,0,2.063.7A486.048,486.048,0,0,0,610.7,405.729a1.882,1.882,0,0,0,.765-1.352C623.729,277.594,590.933,167.465,524.531,69.836ZM222.491,337.58c-28.972,0-52.844-26.587-52.844-59.239S193.056,219.1,222.491,219.1c29.665,0,53.306,26.82,52.843,59.239C275.334,310.993,251.924,337.58,222.491,337.58Zm195.38,0c-28.971,0-52.843-26.587-52.843-59.239S388.437,219.1,417.871,219.1c29.667,0,53.307,26.82,52.844,59.239C470.715,310.993,447.538,337.58,417.871,337.58Z"/>
+    </svg>
+        Discord
+      </button>
     </div>
+        <div className="flex justify-center">
+            <div className="max-w-3xl bg-white">
+                <div className="block sm:inline-block px-6 mx-4 my-2">
+                    <div className="flex flex-col md:flex-row">
+                        <div className="md:w-40 w-40 flex justify-center items-center mb-6 lg:mb-0 mx-auto md:mx-0">
+                            <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2810%29.jpg"
+                                className="rounded-full shadow-md" alt="woman avatar" />
+                        </div>
+                        <div className="md:ml-6">
+                            <p className="text-gray-500 font-light mb-2">
+                                Investing with Hestia has changed my life. Imagine having your properties secured as
+                                NFT, with such a blissful experience
+                            </p>
+                            <p className="font-semibold text-xl mb-2 text-gray-800">Ali Kazeem </p>
+                            <p className="font-semibold text-gray-500 mb-0">@Alikazal</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="block sm:inline-block p-6 m-4">
+                    <div className="flex flex-col md:flex-row">
+                        <div className="md:w-40 w-40 flex justify-center items-center mb-6 lg:mb-0 mx-auto md:mx-0">
+                            <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2810%29.jpg"
+                                className="rounded-full shadow-md" alt="woman avatar" />
+                        </div>
+                        <div className="md:ml-6">
+                            <p className="text-gray-500 font-light mb-2">
+                            Investing with Hestia has changed my life. Imagine having your properties secured as
+                                NFT, with such a blissful experience
+                            </p>
+                            <p className="font-semibold text-xl mb-2 text-gray-800">Ali Kazeem </p>
+                            <p className="font-semibold text-gray-500 mb-0">@Alikazal</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+        <div className="flex justify-center mb-4 mt-4">
+        <button
+            className="bg-green-400 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none">
+            <span className="ml-4 flex items-start flex-col leading-none">
+                <span className="title-font font-medium text-white">Read More</span>
+            </span>
+        </button>
+        </div>
+    </section>
+
+    <h2 className="text-xl font-bold pb-4 text-left pl-20 mt-6">Meet Our Developers</h2>
+    <section className="text-gray-600 body-font">
+    <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+        <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+            <img className="object-cover object-center rounded" alt="hero" src="https://dummyimage.com/720x600" />
+        </div>
+        <div
+            className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+            <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Frontend Developer
+            </h1>
+            <h4>Micheal Jackson</h4>
+            <p className="mb-8 leading-relaxed">He is a seasoned developer with 8years experience in frontend
+                development using React and some experience in Solidairty.</p>
+            <div className="flex justify-center">
+                <button
+                    className="inline-flex text-white bg-green-400 border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded text-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-6 h-6 mr-2">
+                        <path fillRule="currentColor"
+                            d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" />
+                    </svg>
+                </button>
+                <button
+                    className="ml-4 inline-flex text-white bg-green-400 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" className="w-6 h-6">
+                        <path fillRule="currentColor"
+                            d="M524.531,69.836a1.5,1.5,0,0,0-.764-.7A485.065,485.065,0,0,0,404.081,32.03a1.816,1.816,0,0,0-1.923.91,337.461,337.461,0,0,0-14.9,30.6,447.848,447.848,0,0,0-134.426,0,309.541,309.541,0,0,0-15.135-30.6,1.89,1.89,0,0,0-1.924-.91A483.689,483.689,0,0,0,116.085,69.137a1.712,1.712,0,0,0-.788.676C39.068,183.651,18.186,294.69,28.43,404.354a2.016,2.016,0,0,0,.765,1.375A487.666,487.666,0,0,0,176.02,479.918a1.9,1.9,0,0,0,2.063-.676A348.2,348.2,0,0,0,208.12,430.4a1.86,1.86,0,0,0-1.019-2.588,321.173,321.173,0,0,1-45.868-21.853,1.885,1.885,0,0,1-.185-3.126c3.082-2.309,6.166-4.711,9.109-7.137a1.819,1.819,0,0,1,1.9-.256c96.229,43.917,200.41,43.917,295.5,0a1.812,1.812,0,0,1,1.924.233c2.944,2.426,6.027,4.851,9.132,7.16a1.884,1.884,0,0,1-.162,3.126,301.407,301.407,0,0,1-45.89,21.83,1.875,1.875,0,0,0-1,2.611,391.055,391.055,0,0,0,30.014,48.815,1.864,1.864,0,0,0,2.063.7A486.048,486.048,0,0,0,610.7,405.729a1.882,1.882,0,0,0,.765-1.352C623.729,277.594,590.933,167.465,524.531,69.836ZM222.491,337.58c-28.972,0-52.844-26.587-52.844-59.239S193.056,219.1,222.491,219.1c29.665,0,53.306,26.82,52.843,59.239C275.334,310.993,251.924,337.58,222.491,337.58Zm195.38,0c-28.971,0-52.843-26.587-52.843-59.239S388.437,219.1,417.871,219.1c29.667,0,53.307,26.82,52.844,59.239C470.715,310.993,447.538,337.58,417.871,337.58Z" />
+                    </svg>
+                </button>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section className="text-gray-600 body-font">
+    <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+        <div
+            className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+            <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Micheal Jackson</h1>
+            <p className="mb-8 leading-relaxed">He is a seasoned developer with 8years experience in frontend
+                development using React and some experience in Solidairty.</p>
+            <div className="flex lg:flex-row md:flex-col">
+                <button
+                    className="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" className="w-6 h-6">
+                        <path fillRule="currentColor"
+                            d="M524.531,69.836a1.5,1.5,0,0,0-.764-.7A485.065,485.065,0,0,0,404.081,32.03a1.816,1.816,0,0,0-1.923.91,337.461,337.461,0,0,0-14.9,30.6,447.848,447.848,0,0,0-134.426,0,309.541,309.541,0,0,0-15.135-30.6,1.89,1.89,0,0,0-1.924-.91A483.689,483.689,0,0,0,116.085,69.137a1.712,1.712,0,0,0-.788.676C39.068,183.651,18.186,294.69,28.43,404.354a2.016,2.016,0,0,0,.765,1.375A487.666,487.666,0,0,0,176.02,479.918a1.9,1.9,0,0,0,2.063-.676A348.2,348.2,0,0,0,208.12,430.4a1.86,1.86,0,0,0-1.019-2.588,321.173,321.173,0,0,1-45.868-21.853,1.885,1.885,0,0,1-.185-3.126c3.082-2.309,6.166-4.711,9.109-7.137a1.819,1.819,0,0,1,1.9-.256c96.229,43.917,200.41,43.917,295.5,0a1.812,1.812,0,0,1,1.924.233c2.944,2.426,6.027,4.851,9.132,7.16a1.884,1.884,0,0,1-.162,3.126,301.407,301.407,0,0,1-45.89,21.83,1.875,1.875,0,0,0-1,2.611,391.055,391.055,0,0,0,30.014,48.815,1.864,1.864,0,0,0,2.063.7A486.048,486.048,0,0,0,610.7,405.729a1.882,1.882,0,0,0,.765-1.352C623.729,277.594,590.933,167.465,524.531,69.836ZM222.491,337.58c-28.972,0-52.844-26.587-52.844-59.239S193.056,219.1,222.491,219.1c29.665,0,53.306,26.82,52.843,59.239C275.334,310.993,251.924,337.58,222.491,337.58Zm195.38,0c-28.971,0-52.843-26.587-52.843-59.239S388.437,219.1,417.871,219.1c29.667,0,53.307,26.82,52.844,59.239C470.715,310.993,447.538,337.58,417.871,337.58Z" />
+                    </svg>
+                </button>
+                <button
+                    className="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center lg:ml-4 md:ml-0 ml-4 md:mt-4 mt-0 lg:mt-0 hover:bg-gray-200 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-6 h-6 mr-2">
+                        <path fillRule="currentColor"
+                            d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+            <img className="object-cover object-center rounded" alt="hero" src="https://dummyimage.com/720x600" />
+        </div>
+    </div>
+</section>
+
+
+<section className="text-gray-600 body-font">
+    <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+        <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+            <img className="object-cover object-center rounded" alt="hero" src="https://dummyimage.com/720x600" />
+        </div>
+        <div
+            className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+            <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Frontend Developer
+            </h1>
+            <h4>Micheal Jackson</h4>
+            <p className="mb-8 leading-relaxed">He is a seasoned developer with 8years experience in frontend
+                development using React and some experience in Solidairty.</p>
+            <div className="flex justify-center">
+                <button
+                    className="inline-flex text-white bg-green-400 border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded text-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-6 h-6 mr-2">
+                        <path fillRule="currentColor"
+                            d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" />
+                    </svg>
+                </button>
+                <button
+                    className="ml-4 inline-flex text-white bg-green-400 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" className="w-6 h-6">
+                        <path fillRule="currentColor"
+                            d="M524.531,69.836a1.5,1.5,0,0,0-.764-.7A485.065,485.065,0,0,0,404.081,32.03a1.816,1.816,0,0,0-1.923.91,337.461,337.461,0,0,0-14.9,30.6,447.848,447.848,0,0,0-134.426,0,309.541,309.541,0,0,0-15.135-30.6,1.89,1.89,0,0,0-1.924-.91A483.689,483.689,0,0,0,116.085,69.137a1.712,1.712,0,0,0-.788.676C39.068,183.651,18.186,294.69,28.43,404.354a2.016,2.016,0,0,0,.765,1.375A487.666,487.666,0,0,0,176.02,479.918a1.9,1.9,0,0,0,2.063-.676A348.2,348.2,0,0,0,208.12,430.4a1.86,1.86,0,0,0-1.019-2.588,321.173,321.173,0,0,1-45.868-21.853,1.885,1.885,0,0,1-.185-3.126c3.082-2.309,6.166-4.711,9.109-7.137a1.819,1.819,0,0,1,1.9-.256c96.229,43.917,200.41,43.917,295.5,0a1.812,1.812,0,0,1,1.924.233c2.944,2.426,6.027,4.851,9.132,7.16a1.884,1.884,0,0,1-.162,3.126,301.407,301.407,0,0,1-45.89,21.83,1.875,1.875,0,0,0-1,2.611,391.055,391.055,0,0,0,30.014,48.815,1.864,1.864,0,0,0,2.063.7A486.048,486.048,0,0,0,610.7,405.729a1.882,1.882,0,0,0,.765-1.352C623.729,277.594,590.933,167.465,524.531,69.836ZM222.491,337.58c-28.972,0-52.844-26.587-52.844-59.239S193.056,219.1,222.491,219.1c29.665,0,53.306,26.82,52.843,59.239C275.334,310.993,251.924,337.58,222.491,337.58Zm195.38,0c-28.971,0-52.843-26.587-52.843-59.239S388.437,219.1,417.871,219.1c29.667,0,53.307,26.82,52.844,59.239C470.715,310.993,447.538,337.58,417.871,337.58Z" />
+                    </svg>
+                </button>
+
+            </div>
+        </div>
+    </div>
+</section>
+<section className="text-gray-600 body-font">
+    <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+        <div
+            className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+            <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Micheal Jackson</h1>
+            <p className="mb-8 leading-relaxed">He is a seasoned developer with 8years experience in frontend
+                development using React and some experience in Solidairty.</p>
+            <div className="flex lg:flex-row md:flex-col">
+                <button
+                    className="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" className="w-6 h-6">
+                        <path fillRule="currentColor"
+                            d="M524.531,69.836a1.5,1.5,0,0,0-.764-.7A485.065,485.065,0,0,0,404.081,32.03a1.816,1.816,0,0,0-1.923.91,337.461,337.461,0,0,0-14.9,30.6,447.848,447.848,0,0,0-134.426,0,309.541,309.541,0,0,0-15.135-30.6,1.89,1.89,0,0,0-1.924-.91A483.689,483.689,0,0,0,116.085,69.137a1.712,1.712,0,0,0-.788.676C39.068,183.651,18.186,294.69,28.43,404.354a2.016,2.016,0,0,0,.765,1.375A487.666,487.666,0,0,0,176.02,479.918a1.9,1.9,0,0,0,2.063-.676A348.2,348.2,0,0,0,208.12,430.4a1.86,1.86,0,0,0-1.019-2.588,321.173,321.173,0,0,1-45.868-21.853,1.885,1.885,0,0,1-.185-3.126c3.082-2.309,6.166-4.711,9.109-7.137a1.819,1.819,0,0,1,1.9-.256c96.229,43.917,200.41,43.917,295.5,0a1.812,1.812,0,0,1,1.924.233c2.944,2.426,6.027,4.851,9.132,7.16a1.884,1.884,0,0,1-.162,3.126,301.407,301.407,0,0,1-45.89,21.83,1.875,1.875,0,0,0-1,2.611,391.055,391.055,0,0,0,30.014,48.815,1.864,1.864,0,0,0,2.063.7A486.048,486.048,0,0,0,610.7,405.729a1.882,1.882,0,0,0,.765-1.352C623.729,277.594,590.933,167.465,524.531,69.836ZM222.491,337.58c-28.972,0-52.844-26.587-52.844-59.239S193.056,219.1,222.491,219.1c29.665,0,53.306,26.82,52.843,59.239C275.334,310.993,251.924,337.58,222.491,337.58Zm195.38,0c-28.971,0-52.843-26.587-52.843-59.239S388.437,219.1,417.871,219.1c29.667,0,53.307,26.82,52.844,59.239C470.715,310.993,447.538,337.58,417.871,337.58Z" />
+                    </svg>
+                </button>
+                <button
+                    className="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center lg:ml-4 md:ml-0 ml-4 md:mt-4 mt-0 lg:mt-0 hover:bg-gray-200 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-6 h-6 mr-2">
+                        <path fillRule="currentColor"
+                            d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+            <img className="object-cover object-center rounded" alt="hero" src="https://dummyimage.com/720x600" />
+        </div>
+    </div>
+</section>
+    <Footer />
+</div>
     );
   }
   
