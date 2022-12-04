@@ -9,45 +9,98 @@
   margin-top: 2rem;
 }
 
-@media (max-width: 788px){
-
-#box{
-  width: 300px;
-  margin-bottom: 7rem;
-  margin-right: -10rem;
-
-}
-#bx{
-  margin-right: -10rem;
-}
-#img{
-  width: fit-content;
-}
-#proty{
-  margin-right: 30rem;
-  margin-left: -20px;
-}
-}
-
-@media (max-width: 640px){
+@media (max-width: 988px){
   #prop{
-    margin-right: 10rem;
+    margin-left: -12rem;
     padding-right: 30rem;
+    font-size: 10px;
+  }
+  #prop button{
+    width: 5rem;
+    white-space: nowrap;
+  }
+
+  #prop button span{
+     margin-right: 2rem;
   }
   #box{
-    width: 600px;
+    width: 38%;
     margin-bottom: 7rem;
     margin-right: -10rem;
   
   }
   #bx{
-    margin-right: -10rem;
+    margin-right: 10rem;
   }
   #img{
-    width: 580px;
+    width: 100%;
   }
   #proty{
     margin-right: 30rem;
-    margin-left: -20px;
+    margin-left: -6rem;
   }
   }
+
+@media (max-width: 688px){
+  #prop{
+    margin-left: -12rem;
+    padding-right: 30rem;
+    font-size: 10px;
+  }
+  #prop button{
+    width: 5rem;
+    white-space: nowrap;
+  }
+
+  #prop button span{
+     margin-right: 2rem;
+  }
+  #box{
+    width: 38%;
+    margin-bottom: 7rem;
+    margin-right: -10rem;
+  
+  }
+  #bx{
+    margin-right: 10rem;
+  }
+  #img{
+    width: 100%;
+  }
+  #proty{
+    margin-right: 30rem;
+    margin-left: -6rem;
+  }
+  }
+
+  @media (max-width: 388px){
+    #prop{
+      margin-left: -12rem;
+      padding-right: 30rem;
+      font-size: 10px;
+    }
+    #prop button{
+      width: 5rem;
+      white-space: nowrap;
+    }
+
+    #prop button span{
+       margin-right: 2rem;
+    }
+    #box{
+      width: 38%;
+      margin-bottom: 7rem;
+      margin-right: -10rem;
+    
+    }
+    #bx{
+      margin-right: 10rem;
+    }
+    #img{
+      width: 100%;
+    }
+    #proty{
+      margin-right: 30rem;
+      margin-left: -6rem;
+    }
+    }

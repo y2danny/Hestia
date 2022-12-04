@@ -5,44 +5,165 @@
 
 
 
-
-
-@media (max-width: 788px) {
+@media (max-width: 988px) { 
     #nav{
-        width: 700px;
+        width: 30%;
+    }
+    #nav img{
+        width: fit-content;
+        margin-left: 2rem;
+        margin-right: 1rem;
+    }
+    #btn_nav{
+        margin-left: 1rem;
+        margin-right: 1rem;
+       
+    }
+
+    #btn_nav button{
+        width: 90%;
+        font-size: 8px;
+        white-space: nowrap;
+    }
+    #sb{
+        margin-left: -5rem;
+        margin-top: -10rem;
     }
     #sect-blog{
-        width: 600px;
-        margin-left: -5rem;
+        width: 60%;
+        padding-right: 16rem;
+        background:contain;
     }
     #sect{
-        width:600px;
-        margin-right: -3rem;
-        margin-left: 3rem;
+        width:60%;
+        white-space: nowrap;
+        font-size: 8px;
+        margin-left: 40px
+    }
+    #show {
+      display: none;
     }
     #pt{
-        margin-left: 10rem;
-        margin-bottom: 30px;
+        width: 100%;
+        margin-left: 2rem;
+        margin-top: -6rem;
+        display:flex;
+        flex-direction: column;
     }
-    #cont{
-        padding-right: 10rem;
+    #pt input{
+        width: 90%;
+
+    }
+    #pp{
+        font-size: 7px;
+        margin-left: 5px;
+    }
+    #arch{
+        display: none;
     }
 }
 
 @media (max-width: 588px) {
     #nav{
-        width: 560px;
+        width: 30%;
+    }
+    #nav img{
+        width: fit-content;
+        margin-left: 2rem;
+        margin-right: 1rem;
     }
     #btn_nav{
-        margin-left: 20px;
-        margin-right: -10rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+       
+    }
+
+    #btn_nav button{
+        width: 90%;
+        font-size: 8px;
+        white-space: nowrap;
     }
     #sect-blog{
-        width: 600px;
-        margin-left: -5rem;
+        width: 30%;
+        padding-left: -16rem;
+        margin-right: 4rem;
+        background:contain;
     }
     #sect{
-        width:600px;
+        width:60%;
+        white-space: nowrap;
+        font-size: 8px;
     }
-    
+    #show {
+      display: none;
+    }
+    #pt{
+        width: 100%;
+        margin-left: 2rem;
+        margin-top: -6rem;
+        display:flex;
+        flex-direction: column;
+    }
+    #pt input{
+        width: 150%;
+
+    }
+    #pp{
+        font-size: 7px;
+        margin-left: 5px;
+    }
+    #arch{
+        display: none;
+    }
+}
+
+@media (max-width: 388px) {
+    #nav{
+        width: 30%;
+    }
+    #nav img{
+        width: fit-content;
+        margin-left: 2rem;
+        margin-right: 1rem;
+    }
+    #btn_nav{
+        margin-left: 1rem;
+        margin-right: 1rem;
+       
+    }
+
+    #btn_nav button{
+        width: 90%;
+        font-size: 8px;
+        white-space: nowrap;
+    }
+    #sect-blog{
+        width: 30%;
+        padding-left: -16rem;
+        margin-right: 4rem;
+        background:contain;
+    }
+    #sect{
+        width:80%;
+        white-space: nowrap;
+        font-size: 8px;
+    }
+    #show {
+      display: none;
+    }
+    #pt{
+        width: 150px;
+        margin-left: 2rem;
+        margin-top: -6rem;
+        display:flex;
+        flex-direction: column;
+    }
+
+    #pp{
+        font-size: 7px;
+        margin-left: 5px;
+    }
+    #arch{
+        display: none;
+    }
 }

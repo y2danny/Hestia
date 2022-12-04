@@ -1,4 +1,4 @@
-
+import Logo from '../assets/logo.png';
 const Footer = () => {
     return (
       <div className="h-10">
@@ -6,8 +6,7 @@ const Footer = () => {
     <div className="md:flex md:justify-between">
         <div className="mb-6 md:mb-0">
             <a href="/" className="flex items-center">
-                <img src="https://uortjlczjmucmpaqqhqm.supabase.co/storage/v1/object/public/firejet-converted-images/images/fd6e0b75128c35e7388456f74af7be292e7a2c7f.webp" className="mr-3 h-8" alt="FlowBite Logo" />
-                <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Hestia</span>
+                <img src={Logo} className="mr-3 h-8" alt="FlowBite Logo" />
             </a>
         </div>
         <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">

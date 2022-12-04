@@ -4,7 +4,7 @@ import Bus from '../assets/bus.png';
 
 const Blog = () => {
     return (
-<section  className="text-gray-600 body-font overflow-hidden pl-10">
+<section id='sb' className="text-gray-600 body-font overflow-hidden pl-10 sm:mr-10">
     <div id='sect-blog' className=" mx-auto ml-10">
       <div className="mx-auto flex flex-wrap ml-10">
         <img  alt="ecommerce" className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src={Group}/>
@@ -54,7 +54,7 @@ const Blog = () => {
           mint properties for free as NFTs.
           </p>
           <button className="text-white bg-green-600 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded">Read more</button>
-          <div className="flex mt-8">
+          <div id='arch'className="flex mt-8">
             <button className="title-font font-medium text-3xl text-white  border-0 py-2 px-6 focus:outline-none rounded"><img src={Arch} alt=""/></button>
             <button className="flex mr-20 title-font font-medium text-2xl text-white  border-0 py-2 px-6 focus:outline-none  rounded"><img src={Bus} alt=""/></button>
           </div>
