@@ -21,11 +21,20 @@
 
 ## :purple_heart: Team
 
+Team Lead - https://github.com/y2danny
+Ui Designer - http://github.com/yekasumah
+Backend Developer - http://github.com/sagetony
+Frontend Developer - https://github.com/RaphAlemoh
+
+
 
 
 
 
 ### Hestia Tech Stack
+
+### - Hestia  public link
+https://hestia-app.netlify.app/
  
 
 
